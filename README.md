@@ -14,8 +14,9 @@ In short, we need to buy long and high payload robotic arms in order to seriousl
 
 A low-cost open source arm based on `SO-100` and addresses its 2 limitations by introducing:
 
-- **Human arm length 🦾**. By simply extending the lower arm and upper arm of `SO-100`, the robotic arm now has around 65cm span length.
-- **Reasonable payload 💪**. In the key heavy-lifting joints `shoulder_lift` and `wrist_lift`, I use 2 powerful servos to drive one single joint, providing a higher total torque and more stable motion control.
+- **Human arm length 🦾**. By extending the lower and upper arms of the SO-100, PingTi Arm now boasts a 65cm span length—comparable to a human arm! This makes it far more practical for real-world applications.
+
+- **Reasonable payload 💪**. To handle heavier loads, I've upgraded the key joints (shoulder_lift and wrist_lift) with dual powerful servos. This not only increases torque but also ensures smoother and more stable motion control.
 
 ![The Right View of PingTi Arm](./drawings/PingTi_Arm_RightView_V1_20250216.jpg)
 
