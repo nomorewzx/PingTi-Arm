@@ -18,5 +18,5 @@ A low-cost open source arm based on `SO-100` and addresses its 2 limitations by 
 
 - **Reasonable payload 💪**. To handle heavier loads, I've upgraded the key joints (shoulder_lift and wrist_lift) with dual powerful servos. This not only increases torque but also ensures smoother and more stable motion control.
 
-![The Right View of PingTi Arm](./drawings/PingTi_Arm_RightView_V1_20250216.jpg)
+![The Right View of PingTi Arm](./drawings/PingTi_Arm_RightView_V1_20250218.jpg)
 
