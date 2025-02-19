@@ -20,3 +20,6 @@ A low-cost open source arm based on `SO-100` and addresses its 2 limitations by 
 
 ![The Right View of PingTi Arm](./drawings/PingTi_Arm_RightView_V1_20250218.jpg)
 
+### URDF
+
+A PyBullet URDF is created by using [Fusion2PyBullet](https://github.com/yanshil/Fusion2PyBullet/tree/master) , see `./urdf/PingTi_Arm_pybullet/`

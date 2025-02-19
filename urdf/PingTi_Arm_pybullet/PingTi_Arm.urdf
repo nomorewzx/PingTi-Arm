@@ -1,0 +1,521 @@
+<?xml version="1.0" ?>
+<robot name="PingTi_Arm">
+
+<material name="silver">
+  <color rgba="0.700 0.700 0.700 1.000"/>
+</material>
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-3.294222799751554e-06 0.8236699206879414 0.07022225351061052" rpy="0 0 0"/>
+    <mass value="1.1606702094747876"/>
+    <inertia ixx="0.0011816813600861176" iyy="0.0012206576093825297" izz="0.001296311799127925" ixy="-3.3926552274509375e-08" iyz="-0.0002156356566367923" ixz="1.4358649204527133e-07"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rotation_base_framework1">
+  <inertial>
+    <origin xyz="-5.9390483128402e-05 -0.03104904373197548 0.03331281167283248" rpy="0 0 0"/>
+    <mass value="0.6161657363738509"/>
+    <inertia ixx="0.0004327216025152292" iyy="0.0004732006914074296" izz="0.0002414874177193438" ixy="4.6479073398302274e-07" iyz="2.5231853473681176e-05" ixz="-6.728374237754134e-07"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.79488 -0.074498" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/rotation_base_framework1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.79488 -0.074498" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/rotation_base_framework1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="STS3215_rotation_base1">
+  <inertial>
+    <origin xyz="-0.00012706492472179531 3.433446726930356e-08 0.022398959558418058" rpy="0 0 0"/>
+    <mass value="0.2843033831904074"/>
+    <inertia ixx="6.153681935691657e-05" iyy="7.348827769135344e-05" izz="3.972527876480725e-05" ixy="-2.948943172986773e-14" iyz="4.015537902191113e-14" ixz="5.5689283665289e-07"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.020561 -0.76183 -0.132098" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_rotation_base1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="0.020561 -0.76183 -0.132098" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_rotation_base1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="STS3215_rotation_base_21">
+  <inertial>
+    <origin xyz="0.00012706492472184389 3.432095774247301e-08 0.02239895955841617" rpy="0 0 0"/>
+    <mass value="0.2843033831904074"/>
+    <inertia ixx="6.153681935691657e-05" iyy="7.348827769135171e-05" izz="3.972527876475174e-05" ixy="-2.9488564368129744e-14" iyz="-4.01276234462955e-14" ixz="-5.568928366526732e-07"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.020561 -0.76183 -0.132098" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_rotation_base_21.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="-0.020561 -0.76183 -0.132098" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_rotation_base_21.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_to_elbow1">
+  <inertial>
+    <origin xyz="-0.04090125621325043 -0.0014188104082279995 0.10718438504365507" rpy="0 0 0"/>
+    <mass value="1.6997505320587314"/>
+    <inertia ixx="0.008809654000502265" iyy="0.010432174349674889" izz="0.0017265330838114323" ixy="1.8353631067524008e-06" iyz="-5.7223775304926505e-06" ixz="-1.1021573115517563e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.040761 -0.760191 -0.167748" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/shoulder_to_elbow1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="-0.040761 -0.760191 -0.167748" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/shoulder_to_elbow1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="STS3215_elbow_lift_11">
+  <inertial>
+    <origin xyz="-0.00012706520748722444 -0.022398814211436524 -1.6424232546219386e-07" rpy="0 0 0"/>
+    <mass value="0.2843033831904074"/>
+    <inertia ixx="6.153681935691657e-05" iyy="3.9725278764765615e-05" izz="7.348827769129707e-05" ixy="-5.568928366523479e-07" iyz="-4.013456234019941e-14" ixz="-2.948899804899874e-14"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.020622 -0.762571 -0.400541" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_elbow_lift_11.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="0.020622 -0.762571 -0.400541" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_elbow_lift_11.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="STS3215_elbow_lift_21">
+  <inertial>
+    <origin xyz="0.00012706464195756315 -0.022398814211436746 -1.6425583526658016e-07" rpy="0 0 0"/>
+    <mass value="0.2843033831904074"/>
+    <inertia ixx="6.153681935697208e-05" iyy="3.972527876477949e-05" izz="7.348827769138033e-05" ixy="5.568928366523479e-07" iyz="4.0120684552391594e-14" ixz="-2.948899804899874e-14"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0205 -0.762571 -0.400541" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_elbow_lift_21.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0205 -0.762571 -0.400541" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_elbow_lift_21.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbow_to_wrist1">
+  <inertial>
+    <origin xyz="-0.03228149965760949 -0.12872175078832537 -0.0007099875466193839" rpy="0 0 0"/>
+    <mass value="1.323622551599331"/>
+    <inertia ixx="0.009695747175915592" iyy="0.0008706495499018474" izz="0.010471813507346939" ixy="-0.00047444263704653905" iyz="-4.68962570436271e-05" ixz="-2.1501697507059214e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0407 -0.727371 -0.400541" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/elbow_to_wrist1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0407 -0.727371 -0.400541" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/elbow_to_wrist1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="STS3215_wrist_lift1">
+  <inertial>
+    <origin xyz="-0.01782687967247619 -0.012098628884651574 -1.6471350994251566e-07" rpy="0 0 0"/>
+    <mass value="0.2843033831904074"/>
+    <inertia ixx="6.15368193569582e-05" iyy="3.972527876477949e-05" izz="7.348827769136645e-05" ixy="-5.568928366529984e-07" iyz="-4.0141501234103316e-14" ixz="-2.948964857030223e-14"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.023929 -0.461671 -0.402866" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_wrist_lift1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="-0.023929 -0.461671 -0.402866" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_wrist_lift1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wrist_Roll_Pitch_08i1">
+  <inertial>
+    <origin xyz="0.014809966524319273 5.15030067164135e-05 -0.026380103880272898" rpy="0 0 0"/>
+    <mass value="0.2392168278135931"/>
+    <inertia ixx="0.00011529218614687864" iyy="0.00019975423729731712" izz="0.00012628740337444072" ixy="-4.1713915605379247e-08" iyz="-3.2238510277310395e-07" ixz="-6.71594654948386e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.013971 -0.437221 -0.402416" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/Wrist_Roll_Pitch_08i1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="0.013971 -0.437221 -0.402416" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/Wrist_Roll_Pitch_08i1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="STS3215_wrist_roll1">
+  <inertial>
+    <origin xyz="-0.012800787184544506 3.9867181089725534e-07 -0.018426685114597052" rpy="0 0 0"/>
+    <mass value="0.2843033831904074"/>
+    <inertia ixx="3.972527876477949e-05" iyy="7.348827769135258e-05" izz="6.153681935695127e-05" ixy="-4.0140200191496334e-14" iyz="2.949723798550963e-14" ixz="5.568928366526732e-07"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.004129 -0.437221 -0.380195" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_wrist_roll1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="-0.004129 -0.437221 -0.380195" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_wrist_roll1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wrist_Roll_08c1">
+  <inertial>
+    <origin xyz="-0.015652773080708077 -0.0013358137327671993 -0.0203053963206562" rpy="0 0 0"/>
+    <mass value="0.44698022927880193"/>
+    <inertia ixx="0.0003009649490412769" iyy="0.0003330307502686508" izz="0.00016593464746506026" ixy="-4.1210889843272275e-06" iyz="-1.111066423073459e-06" ixz="-5.571357694080306e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.005769 -0.436771 -0.341695" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/Wrist_Roll_08c1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="-0.005769 -0.436771 -0.341695" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/Wrist_Roll_08c1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="STS3215_gripper1">
+  <inertial>
+    <origin xyz="0.022399481427145027 0.00012738736828515895 3.7980336964338335e-07" rpy="0 0 0"/>
+    <mass value="0.2843033831904074"/>
+    <inertia ixx="3.972527876477949e-05" iyy="6.15368193569478e-05" izz="7.348827769134564e-05" ixy="-5.568928366532153e-07" iyz="-2.949029909160572e-14" ixz="-4.014063387236533e-14"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.011121 -0.434492 -0.327295" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_gripper1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="0.011121 -0.434492 -0.327295" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_gripper1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Moving_Jaw_08d1">
+  <inertial>
+    <origin xyz="-0.0004999008270069223 -0.02078399771673567 -0.0292528368307568" rpy="0 0 0"/>
+    <mass value="0.1586808414280307"/>
+    <inertia ixx="8.673205684445878e-05" iyy="7.037496093636152e-05" izz="2.370390078658413e-05" ixy="8.253022754111695e-08" iyz="1.5105713859903114e-06" ixz="-4.1898743981573245e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.024079 -0.454692 -0.327295" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/Moving_Jaw_08d1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="-0.024079 -0.454692 -0.327295" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/Moving_Jaw_08d1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wrist_servo_fixer1">
+  <inertial>
+    <origin xyz="0.023150392016881474 -5.781115936165371e-05 0.0018440665079816343" rpy="0 0 0"/>
+    <mass value="0.10853073755546008"/>
+    <inertia ixx="2.681940887344636e-05" iyy="5.8243249697269295e-05" izz="4.591982320177601e-05" ixy="1.9180973510858016e-07" iyz="5.297613838578519e-08" ixz="-1.7483214372597143e-07"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.017371 -0.470171 -0.402541" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/wrist_servo_fixer1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="0.017371 -0.470171 -0.402541" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/wrist_servo_fixer1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="STS3215_rotation_base_01">
+  <inertial>
+    <origin xyz="6.7522991337791345e-12 0.023001006764512555 0.00012699691993646456" rpy="0 0 0"/>
+    <mass value="0.2843033831904074"/>
+    <inertia ixx="7.348827769135258e-05" iyy="3.972527876478296e-05" izz="6.153681935691657e-05" ixy="-4.0140321707018876e-14" iyz="5.568928366471437e-07" ixz="2.948943618495333e-14"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.78468 -0.092798" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_rotation_base_01.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+    <material/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.78468 -0.092798" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/STS3215_rotation_base_01.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="rotation_pitch_rotation_servo" type="revolute">
+  <origin xyz="0.0 0.0102 -0.0183" rpy="0 0 0"/>
+  <parent link="STS3215_rotation_base_01"/>
+  <child link="rotation_base_framework1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+  <limit upper="2.094395" lower="0.0" effort="100" velocity="100"/>
+</joint>
+<transmission name="rotation_pitch_rotation_servo_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="rotation_pitch_rotation_servo">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="rotation_pitch_rotation_servo_actr">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<joint name="rotation_pitch_shoulder_servo_1" type="fixed">
+  <origin xyz="-0.020561 -0.03305 0.0576" rpy="0 0 0"/>
+  <parent link="rotation_base_framework1"/>
+  <child link="STS3215_rotation_base1"/>
+</joint>
+
+<joint name="rotation_pitch_shoulder_servo_2" type="fixed">
+  <origin xyz="0.020561 -0.03305 0.0576" rpy="0 0 0"/>
+  <parent link="rotation_base_framework1"/>
+  <child link="STS3215_rotation_base_21"/>
+</joint>
+
+<joint name="shoulder_link_shoulder_servo" type="revolute">
+  <origin xyz="0.0202 -0.001639 0.03565" rpy="0 0 0"/>
+  <parent link="STS3215_rotation_base_21"/>
+  <child link="shoulder_to_elbow1"/>
+  <axis xyz="1.0 -0.0 0.0"/>
+  <limit upper="2.007129" lower="-2.007129" effort="100" velocity="100"/>
+</joint>
+<transmission name="shoulder_link_shoulder_servo_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="shoulder_link_shoulder_servo">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="shoulder_link_shoulder_servo_actr">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<joint name="elbow_pitch_elbow_servo_1" type="fixed">
+  <origin xyz="-0.061383 0.00238 0.232793" rpy="0 0 0"/>
+  <parent link="shoulder_to_elbow1"/>
+  <child link="STS3215_elbow_lift_11"/>
+</joint>
+
+<joint name="elbow_pitch_elbow_servo_2" type="fixed">
+  <origin xyz="-0.020261 0.00238 0.232793" rpy="0 0 0"/>
+  <parent link="shoulder_to_elbow1"/>
+  <child link="STS3215_elbow_lift_21"/>
+</joint>
+
+<joint name="elbow_link_elbow_servo" type="revolute">
+  <origin xyz="0.0202 -0.0352 0.0" rpy="0 0 0"/>
+  <parent link="STS3215_elbow_lift_21"/>
+  <child link="elbow_to_wrist1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+  <limit upper="1.919862" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+<transmission name="elbow_link_elbow_servo_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="elbow_link_elbow_servo">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="elbow_link_elbow_servo_actr">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<joint name="wrist_pitch_wrist_servo" type="fixed">
+  <origin xyz="-0.016771 -0.2657 0.002325" rpy="0 0 0"/>
+  <parent link="elbow_to_wrist1"/>
+  <child link="STS3215_wrist_lift1"/>
+</joint>
+
+<joint name="wrist_roll_pitch_wrist_lift_servo" type="revolute">
+  <origin xyz="-0.0379 -0.02445 -0.00045" rpy="0 0 0"/>
+  <parent link="STS3215_wrist_lift1"/>
+  <child link="Wrist_Roll_Pitch_08i1"/>
+  <axis xyz="-1.0 0.0 -0.0"/>
+  <limit upper="1.919862" lower="-1.919862" effort="100" velocity="100"/>
+</joint>
+<transmission name="wrist_roll_pitch_wrist_lift_servo_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="wrist_roll_pitch_wrist_lift_servo">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="wrist_roll_pitch_wrist_lift_servo_actr">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<joint name="wrist_roll_pitch_roll_servo_connect" type="fixed">
+  <origin xyz="0.0181 0.0 -0.022221" rpy="0 0 0"/>
+  <parent link="Wrist_Roll_Pitch_08i1"/>
+  <child link="STS3215_wrist_roll1"/>
+</joint>
+
+<joint name="wrist_roll_servo" type="continuous">
+  <origin xyz="0.00164 -0.00045 -0.0385" rpy="0 0 0"/>
+  <parent link="STS3215_wrist_roll1"/>
+  <child link="Wrist_Roll_08c1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+<transmission name="wrist_roll_servo_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="wrist_roll_servo">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="wrist_roll_servo_actr">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<joint name="gripper_pitch_servo_connect" type="fixed">
+  <origin xyz="-0.01689 -0.002279 -0.0144" rpy="0 0 0"/>
+  <parent link="Wrist_Roll_08c1"/>
+  <child link="STS3215_gripper1"/>
+</joint>
+
+<joint name="gripper_open_closing" type="revolute">
+  <origin xyz="0.0352 0.0202 0.0" rpy="0 0 0"/>
+  <parent link="STS3215_gripper1"/>
+  <child link="Moving_Jaw_08d1"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
+  <limit upper="1.570796" lower="-0.20944" effort="100" velocity="100"/>
+</joint>
+<transmission name="gripper_open_closing_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="gripper_open_closing">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="gripper_open_closing_actr">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<joint name="Rigid_15" type="fixed">
+  <origin xyz="-0.058071 -0.2572 0.002" rpy="0 0 0"/>
+  <parent link="elbow_to_wrist1"/>
+  <child link="wrist_servo_fixer1"/>
+</joint>
+
+<joint name="Rigid_16" type="fixed">
+  <origin xyz="0.0 0.78468 0.092798" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="STS3215_rotation_base_01"/>
+</joint>
+
+</robot>
