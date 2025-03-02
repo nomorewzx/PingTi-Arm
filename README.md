@@ -1,25 +1,22 @@
 # PingTi Arm - A Low-Cost Robotic Arm with Human Arm Length 🤖💪
 
+<center> <a href=./docs/README_CN.md> 中文版 </a> </center>
 
-### Why PingTi Arm? 🤔
+## What is PingTi Arm? 🤔
 
-`SO-100` is a great low-cost open source robotic arm and Lerobot is a fantastic AI for Robotics open source project. But `SO-100` has below limitations:
+**PingTi Arm** is an open-source robotic arm designed based on the [SO-ARM100 arm](https://github.com/TheRobotStudio/SO-ARM100) and is compatible with [Lerobot](https://github.com/huggingface/lerobot). The name "PingTi" comes from the Chinese pinyin "平替" (píng tì), which means "affordable substitute"
 
-- **Short arm span**, which makes it almost a toy and hardly to do practical work with its span length 
-- **Light payload**, which makes it really hard to do a simple work like picking a bootle of water
+### Features 
+- **Human arm scale**: 660mm arm span (excluding the end effector).
+- **Reasonable payload**: Supports up to 550g at maximum arm span.
+- **Low cost**: A single PingTi arm costs approximately USD 283, and a pair of Lead-Follower arms (PingTi arm as the follower and SO-ARM100 as the leader) can be assembled for USD 400.
 
-In short, we need to buy long and high payload robotic arms in order to seriously study the state-of-the-art AI for robotics (pi0, OpenVLA etc.), and these robotic arms are usually expensive.
 
-### What is PingTi Arm ✨
-
-A low-cost open source arm based on `SO-100` and addresses its 2 limitations by introducing:
-
-- **Human arm length 🦾**. By extending the lower and upper arms of the SO-100, PingTi Arm now boasts a 65cm span length—comparable to a human arm! This makes it far more practical for real-world applications.
-
-- **Reasonable payload 💪**. To handle heavier loads, I've upgraded the key joints (shoulder_lift and wrist_lift) with dual powerful servos. This not only increases torque but also ensures smoother and more stable motion control.
+### Docs
+- [Bills of Materials List](./docs/BOM_List.md) ｜ [Bills of Materials List 中文版](./docs/BOM_List_CN.md)
+- [3D Printing](./docs/3d_print.md)
+- [Assembly tutorial](./docs/Assembe_tutorial.md)
+- Run teleoperation
+- [URDF for Simulation](./docs/URDF_SIM.md)
 
 ![The Right View of PingTi Arm](./drawings/PingTi_Arm_RightView_V1_20250218.jpg)
-
-### URDF
-
-A PyBullet URDF is created by using [Fusion2PyBullet](https://github.com/yanshil/Fusion2PyBullet/tree/master) , see `./urdf/PingTi_Arm_pybullet/`
