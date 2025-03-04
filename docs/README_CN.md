@@ -9,7 +9,7 @@ PingTi 机械臂基于 [SO-ARM100 机械臂](https://github.com/TheRobotStudio/S
 - **低成本**：
     - 单个 PingTi 机械臂的成本约为 **1800元人民币**，
     - 一对主从机械臂（PingTi 机械臂作为从臂，SO-ARM100 作为主臂）的组装成本为 **2486元人民币**。
-    - 如果你已经组装了一只 SO-ARM100 从动臂(使用12V, 30kg.cm 舵机)，那么你只需要再买2个舵机，一个USB驱动板 (973元)，就可以组装 PingTi Arm
+    - 如果你已经组装了一只 SO-ARM100 从动臂(使用12V, 30kg.cm舵机)，那么你只需要再买2个舵机，一个USB驱动板 (973元)，就可以组装 PingTi Arm
 
 ### Docs
 - [物料清单(淘宝链接版)](./BOM_List_CN.md)

@@ -12,7 +12,7 @@
 - **Cost Effective**: 
   - A single PingTi arm costs ~ USD 261, 
   - A Lead-Follower setup (PingTi arm as the follower, SO-ARM100 as the leader) costs ~ USD 390.
-  - If you already own an SO-ARM100 follower arm (12V, 20KG.cm servos), you only need 2 additional servos and a USB drive board (~$157) to assemble the PingTi arm.
+  - If you already own an SO-ARM100 follower arm (12V, 30kg.cm servos), you only need 2 additional servos and a USB drive board (~$157) to assemble the PingTi arm.
 
 
 ### Docs
