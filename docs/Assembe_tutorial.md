@@ -10,6 +10,13 @@ There are 10 links and the placement for different links can be found below:
 
 ![Placement of links](../media/pingti_arm_link_placement.jpg)
 
+## USB board connection
+Connect the power supply and servos by referring image blow.
+
+> **Note**: The `V1` port is labeled as `DC6V-9V`, but I checked with Feetech tech support and confirmed that a 12V power supply can be safely connected
+
+![Feetech USB Drive Board](../media/feetech_usb_drive_board.jpg)
+
 ## Configure Servos using LeRobot
 
 ### A. Install LeRobot library and Find USB port
@@ -17,6 +24,8 @@ There are 10 links and the placement for different links can be found below:
 Refer the **Install LeRobot** section of offical [LeRobot tutorial](https://github.com/huggingface/lerobot/blob/main/examples/10_use_so100.md#b-install-lerobot) 
 
 You should also find the USB port by following instructions of **Find the USB ports associated to each arm** in [LeRobot tutorial](https://github.com/huggingface/lerobot/blob/main/examples/10_use_so100.md#1-find-the-usb-ports-associated-to-each-arm)
+
+>**Note**: The port number of the Feetech USB board may occasionally change. If you encounter a "port not found" error after identifying the port earlier, please recheck the USB port.
 
 ### B. Configure the servos using LeRobot
 
@@ -58,8 +67,7 @@ See SO-ARM100 assemble video for the assembly of base links with servo (ID 1). S
 **Connecting wires to servos** The shoulder joint consists of 2 `ST-3250` servos and you should connect all 4 wires before putting the servos into slots, see image below. 
 ![wires connection](../media/shoulder_assemble_connecting_servos_wires.jpg)
 
-**Putting servos into slots of base_yaw_link** Put the `ID 2` servo on the left slot and `ID 3` servo on the right slot. See image below
-
+**Putting servos into slots of base_yaw_link** Put the `ID 2` servo on the left slot and `ID 3` servo on the right slot. Secure the servo with four M2x5 screws. See image below
 ![putting servos into slot](../media/shoulder_assemble_putting_servo_into_slot.jpg)
 
 
@@ -73,7 +81,7 @@ See SO-ARM100 assemble video for the assembly of base links with servo (ID 1). S
 
 ![connect wires](../media/elbow_assemble_connect_wire.jpg)
 
-**Putting servos into slots and attache elbow link** Put the `ID4` and `ID5` into servo slots like image below. Also attach the elbow link to servo horns using 8 M3x6 machine screws
+**Putting servos into slots and attache elbow link** Put the `ID4` and `ID5` into servo slots like image below and secure the servos using four M2x5 screws. Also attach the elbow link to servo horns using 8 M3x6 machine screws. 
 
 ![putting servo and attach links](../media/elbow_assemble_putting_servo_slot_and_attach_link.jpg)
 

@@ -10,6 +10,14 @@ PingTi arm 共有10个连杆，不同连杆的放置位置如下：
 
 ![连杆放置](../media/pingti_arm_link_placement.jpg)
 
+## USB 板连接
+
+请参考下方图片连接电源和舵机。
+
+> **注意**：`V1` 端口标注为 `DC6V-9V`，但经过咨询 Feetech 技术支持，确认可以安全连接 12V 电源。
+
+![Feetech USB 驱动板](../media/feetech_usb_drive_board.jpg)
+
 ## 使用LeRobot配置舵机
 
 ### A. 安装LeRobot库并查找USB端口
@@ -59,7 +67,7 @@ python lerobot/scripts/configure_motor.py \
 **连接舵机线缆** Shoulder 关节由2个`ST-3250`舵机组成，您应在将舵机放入槽位之前连接所有4根线缆，如下图所示。  
 ![线缆连接](../media/shoulder_assemble_connecting_servos_wires.jpg)
 
-**将舵机放入base_yaw_link的槽位** 将`ID 2`舵机放在左侧槽位，`ID 3`舵机放在右侧槽位。如下图所示  
+**将舵机放入base_yaw_link的槽位** 将`ID 2`舵机放在左侧槽位，`ID 3`舵机放在右侧槽位。使用4个M2x5螺丝固定舵机。如下图所示  
 
 ![将舵机放入槽位](../media/shoulder_assemble_putting_servo_into_slot.jpg)
 
@@ -72,7 +80,7 @@ python lerobot/scripts/configure_motor.py \
 
 ![连接线缆](../media/elbow_assemble_connect_wire.jpg)
 
-**将 Shoulder link 槽位并连接肘部连杆** 将`ID4`舵机放入左侧槽位，`ID5`舵机放入右侧槽位，如下图所示。同时使用8个M3x6机器螺钉将 Elbow link 连接到舵盘。
+**将 Shoulder link 槽位并连接肘部连杆** 如下图所示，将`ID4`舵机放入左侧槽位，`ID5`舵机放入右侧槽位，使用4个M2x5螺丝固定舵机。同时使用8个M3x6机器螺钉将 Elbow link 连接到舵盘。
 
 ![放入舵机并连接连杆](../media/elbow_assemble_putting_servo_slot_and_attach_link.jpg)
 
