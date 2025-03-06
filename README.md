@@ -6,12 +6,16 @@
 
 **PingTi Arm** is an open-source robotic arm designed based on the [SO-100 arm](https://github.com/TheRobotStudio/SO-ARM100) and is compatible with [Lerobot](https://github.com/huggingface/lerobot). The name "PingTi" comes from the Chinese pinyin "平替" (píng tì), which means "affordable substitute"
 
+![PingTi Arm](./media/pingti_arm_demo.jpg)
+
 ## Features 
 - **Human arm scale**: 600mm arm span (excluding the end effector).
 - **Reasonable payload**: Supports up to 500g at maximum arm span.
+- **Support setting up Leader-Follower arms** you can setup a pair of Leader-Follower arm using PingTi Arm as follower arm and SO-100 as leader arm
+- **Compatible with Lerobot**, You can run teleoperation, data collection and other tasks that Lerobot supports via [pingti_lerobot_bridge](https://github.com/nomorewzx/pingti_lerobot_bridge)` sdk
 - **Cost Effective**: 
   - A single PingTi arm costs ~ USD 261, 
-  - A Lead-Follower setup (PingTi arm as the follower, SO-100 as the leader) costs ~ USD 390.
+  - A Lead-Follower setup costs ~ USD 390.
   - If you already own an SO-100 follower arm (12V, 30kg.cm servos), you only need 2 additional servos and a USB drive board (~$157) to assemble the PingTi arm.
 
 
