@@ -1,27 +1,27 @@
 
 ## Sourcing Parts
 
-**Note:** The PingTi arm can be used as a follower arm in teleoperation tasks, while the SO-ARM100 arm can serve as the leader arm.
+**Note:** The PingTi arm can be used as a follower arm in teleoperation tasks, while the SO-100 arm can serve as the leader arm.
 
-This section includes the Bill of Materials (BOM) for a single PingTi arm and a single SO-ARM100 leader arm. The provided links are for purchasing parts in the U.S. and E.U. For links to purchase parts in China, please refer to the [BOM List 中文版](./BOM_List_CN.md).
+This section includes the Bill of Materials (BOM) for a single PingTi arm and a single SO-100 leader arm. The provided links are for purchasing parts in the U.S. and E.U. For links to purchase parts in China, please refer to the [BOM List 中文版](./BOM_List_CN.md).
 
 #### Parts For PingTi Arm:
 | Part                | Amount | Unit Cost (US) | Buy US                                                                                       | Unit Cost (EU) | Buy EU |
 |---------------------|--------|----------------|-------------------|----------------|------------|
 | STS3250 Servo | 2 | $73.89 | [Alibaba](https://www.alibaba.com/product-detail/ST3250-Metal-Serial-Servo-360-Degree_1601383687169.html) | 59.25€ | [Alibaba](https://www.alibaba.com/product-detail/ST3250-Metal-Serial-Servo-360-Degree_1601383687169.html) |
-| STS3215 Servo (12V,30 kg.cm) | 6 | $13.89 | [Alibaba](https://www.alibaba.com/product-detail/Feetech-STS3215-SO-ARM100-Servo-12V_1601292634404.html) | 13.00€ | [Alibaba](https://www.alibaba.com/product-detail/Feetech-STS3215-SO-ARM100-Servo-12V_1601292634404.html)          |
+| STS3215 Servo (12V,30 kg.cm) | 6 | $13.89 | [Alibaba](https://www.alibaba.com/product-detail/Feetech-STS3215-SO-100-Servo-12V_1601292634404.html) | 13.00€ | [Alibaba](https://www.alibaba.com/product-detail/Feetech-STS3215-SO-100-Servo-12V_1601292634404.html)          |
 | Motor Control Board | 1 | $7.05 | [Amazon](https://www.alibaba.com/product-detail/Feetech-FE-URT-1-Multi-Function_1600157148551.html?spm=a2700.details.buy_together.5.793a5c5afTUbM0)| 6.79€ | [Alibaba](https://www.alibaba.com/product-detail/Feetech-FE-URT-1-Multi-Function_1600157148551.html?spm=a2700.details.buy_together.5.793a5c5afTUbM0) |
 | Table Clamp 2pcs | 1 | $9.00 | [Amazon](https://www.amazon.com/Mr-Pen-Carpenter-Clamp-6inch/dp/B092L925J4/) | 8.00€ | [Amazon](https://www.amazon.fr/-/en/dp/B08HZ1QRBF/) |
 | Dupont Wire | 1 | $6.98 | [Amazon](https://www.amazon.com/Elegoo-EL-CP-004-Multicolored-Breadboard-arduino/dp/B01EV70C78/ref=sr_1_1)| 6.99€ | [Amazon](https://www.amazon.fr/-/en/dp/B01BKN8UX4/ref=sr_1_3) |
 | Total | | $261.09 | --- | 218.28€ | --- |
 
 > **Note:** 
-> The Waveshare USB Drive board previously recommended by the SO-ARM100 team was tested and found unable to drive all eight servos of the PingTi Arm. Therefore, the Feetech USB Drive board is used instead.
+> The Waveshare USB Drive board previously recommended by the SO-100 team was tested and found unable to drive all eight servos of the PingTi Arm. Therefore, the Feetech USB Drive board is used instead.
 
 
 #### Parts for SO100 Leader Arm:
 
-Note: This BOM list is copied from [SO-ARM100 repo](https://github.com/TheRobotStudio/SO-ARM100)
+Note: This BOM list is copied from [SO-100 repo](https://github.com/TheRobotStudio/SO-ARM100)
 
 | Part | Amount | Unit Cost (US) | Buy US | Unit Cost (EU) | Buy EU |
 |---|---|---|---|---|---|

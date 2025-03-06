@@ -12,7 +12,7 @@ The printer settings are:
 - Enable support
 
 
-**Note**: The STL files with suffix `_from_so100` means I copy these files directly from [SO-ARM100 repo](https://github.com/TheRobotStudio/SO-ARM100)
+**Note**: The STL files with suffix `_from_so100` means I copy these files directly from [SO-100 repo](https://github.com/TheRobotStudio/SO-ARM100)
 
-### SO-ARM100 Leader Arm
-You can find the STL files from official github repo [SO-ARM100 Leader Arm](https://github.com/TheRobotStudio/SO-ARM100/blob/main/stl_files_for_3dprinting/Leader/Print_Leader_SO_ARM100_08k_Ender.STL)
+### SO-100 Leader Arm
+You can find the STL files from official github repo [SO-100 Leader Arm](https://github.com/TheRobotStudio/SO-ARM100/blob/main/stl_files_for_3dprinting/Leader/Print_Leader_SO_ARM100_08k_Ender.STL)

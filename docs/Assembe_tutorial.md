@@ -61,7 +61,7 @@ You can refer to LeRobot official video for adding the motor horn to all 8 servo
 ## Assemble of PingTi Aarm
 
 ### Assemble of Base
-See SO-ARM100 assemble video for the assembly of base links with servo (ID 1). Specifically, you should look at the **Step4.1 to Step4.4** in [this video](https://www.youtube.com/watch?v=FioA2oeFZ5I&list=PLo2EIpI_JMQu5zrDHe4NchRyumF2ynaUN&index=9&t=610s)
+See SO-100 assemble video for the assembly of base links with servo (ID 1). Specifically, you should look at the **Step4.1 to Step4.4** in [this video](https://www.youtube.com/watch?v=FioA2oeFZ5I&list=PLo2EIpI_JMQu5zrDHe4NchRyumF2ynaUN&index=9&t=610s)
 
 ### Assemble of Shoulder
 **Connecting wires to servos** The shoulder joint consists of 2 `ST-3250` servos and you should connect all 4 wires before putting the servos into slots, see image below. 
@@ -88,10 +88,10 @@ See SO-ARM100 assemble video for the assembly of base links with servo (ID 1). S
 
 
 ### Assemble of Wrist and Gripper
-See SO-ARM100 assemble video for the assembly of wrist links, gripper links and servos (you would use servos with id 6, 7 and 8). 
+See SO-100 assemble video for the assembly of wrist links, gripper links and servos (you would use servos with id 6, 7 and 8). 
 
 Specifically, you should start from **Step 4.9 to Step 4.12** in [this video](https://www.youtube.com/watch?v=FioA2oeFZ5I&list=PLo2EIpI_JMQu5zrDHe4NchRyumF2ynaUN&index=11&t=669s)
 
-## Assemble of SO-ARM100 Leader Arm
-See the [SO-ARM100 assemble video for Leader Arm](https://www.youtube.com/watch?v=FioA2oeFZ5I&list=PLo2EIpI_JMQu5zrDHe4NchRyumF2ynaUN&index=12&t=707s)
+## Assemble of SO-100 Leader Arm
+See the [SO-100 assemble video for Leader Arm](https://www.youtube.com/watch?v=FioA2oeFZ5I&list=PLo2EIpI_JMQu5zrDHe4NchRyumF2ynaUN&index=12&t=707s)
 

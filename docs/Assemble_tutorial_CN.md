@@ -61,7 +61,7 @@ python lerobot/scripts/configure_motor.py \
 ## PingTi机械臂组装
 
 ### Base 组装
-参考SO-ARM100组装视频，组装base link 与舵机（ID `1`）。具体来说，您应查看[此视频](https://www.youtube.com/watch?v=FioA2oeFZ5I&list=PLo2EIpI_JMQu5zrDHe4NchRyumF2ynaUN&index=9&t=610s)中的**Step 4.1到Step 4.4**。
+参考SO-100组装视频，组装base link 与舵机（ID `1`）。具体来说，您应查看[此视频](https://www.youtube.com/watch?v=FioA2oeFZ5I&list=PLo2EIpI_JMQu5zrDHe4NchRyumF2ynaUN&index=9&t=610s)中的**Step 4.1到Step 4.4**。
 
 ### Shoulder 组装
 **连接舵机线缆** Shoulder 关节由2个`ST-3250`舵机组成，您应在将舵机放入槽位之前连接所有4根线缆，如下图所示。  
@@ -85,15 +85,15 @@ python lerobot/scripts/configure_motor.py \
 ![放入舵机并连接连杆](../media/elbow_assemble_putting_servo_slot_and_attach_link.jpg)
 
 ### Wrist & Gripper 组装
-参考SO-ARM100组装视频，组装腕部连杆、夹爪连杆和舵机（您将使用ID为6、7和8的舵机）。  
+参考SO-100组装视频，组装腕部连杆、夹爪连杆和舵机（您将使用ID为6、7和8的舵机）。  
 
 具体来说，您应从[此视频](https://www.youtube.com/watch?v=FioA2oeFZ5I&list=PLo2EIpI_JMQu5zrDHe4NchRyumF2ynaUN&index=11&t=669s)中的**步骤4.9到步骤4.12**开始。
 
-## SO-ARM100主控机械臂组装
-参考[SO-ARM100主控机械臂组装视频](https://www.youtube.com/watch?v=FioA2oeFZ5I&list=PLo2EIpI_JMQu5zrDHe4NchRyumF2ynaUN&index=12&t=707s)
+## SO-100主控机械臂组装
+参考[SO-100主控机械臂组装视频](https://www.youtube.com/watch?v=FioA2oeFZ5I&list=PLo2EIpI_JMQu5zrDHe4NchRyumF2ynaUN&index=12&t=707s)
 
 ## Footnote
 
-在 Bilibili 也可以找到 SO-ARM100 相关的组装教程，例如 [30分钟装好SO-ARM100-保姆级视频组装教程-从臂](https://www.bilibili.com/video/BV1CNNoeeEpJ/?spm_id_from=333.337.search-card.all.click&vd_source=2e4ecddcf1639d3485e2196c66390b81)
+在 Bilibili 也可以找到 SO-100 相关的组装教程，例如 [30分钟装好SO-100-保姆级视频组装教程-从臂](https://www.bilibili.com/video/BV1CNNoeeEpJ/?spm_id_from=333.337.search-card.all.click&vd_source=2e4ecddcf1639d3485e2196c66390b81)
 
 
