@@ -12,7 +12,7 @@
 - **Human arm scale**: 600mm arm span (excluding the end effector).
 - **Reasonable payload**: Supports up to 500g at maximum arm span.
 - **Support setting up Leader-Follower arms** you can setup a pair of Leader-Follower arm using PingTi Arm as follower arm and SO-100 as leader arm
-- **Compatible with Lerobot**, You can run teleoperation, data collection and other tasks that Lerobot supports via [pingti_lerobot_bridge](https://github.com/nomorewzx/pingti_lerobot_bridge)` sdk
+- **Compatible with Lerobot**, You can run teleoperation, data collection and other tasks that Lerobot supports via [pingti_lerobot_bridge](https://github.com/nomorewzx/pingti_lerobot_bridge) sdk
 - **Cost Effective**: 
   - A single PingTi arm costs ~ USD 261, 
   - A Lead-Follower setup costs ~ USD 390.
