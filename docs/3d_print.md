@@ -1,4 +1,4 @@
-3D Printing
+# 3D Printing
 
 ### PingTi arm
 > Estimated time: ~20 hours
@@ -11,6 +11,9 @@ The printer settings are:
 - Sparse infill density: 13%
 - Enable support
 
+There are also two additional parts for the main extension links, elbow_link_alternate and shoulder_link_alternate which can be used instead of the usual elbow and shoulder links. They are a slightly shortened so they can be printed horizontally on a Bambu A1 print bed and mimic the SO-ARM101 design.
+
+![extra links](/drawings/3dprint_alternate.png)
 
 **Note**: The STL files with suffix `_from_so100` means I copy these files directly from [SO-100 repo](https://github.com/TheRobotStudio/SO-ARM100)
 

@@ -29,3 +29,4 @@
 >1. 以上价格为参考价格，实际价格可能因市场波动而有所变化。
 >2. 除舵机外和USB驱动板外，其余零部件的链接只是参考，你可以购买其它商家的相同规格的产品
 >3. SO-100 之前推荐的 Waveshare USB Drive board 经测试无法驱动PingTi Arm的8个舵机，因此使用Feetech 的 USB Drive board
+> 4. 如果您改装的是自带 [Seeed Studio XIAO 舵机驱动板](https://www.alibaba.com/product-detail/105990190-Bus-Servo-Driver-Board-for_1601428837475.html) 的 SO-ARM101 套件，则无需额外购买电机驱动板，该驱动板同样能够驱动整套 PingTi 机械臂。
