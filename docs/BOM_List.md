@@ -16,8 +16,10 @@ This section includes the Bill of Materials (BOM) for a single PingTi arm and a 
 | Total | | $261.09 | --- | 218.28€ | --- |
 
 > **Note:** 
-> The Waveshare USB Drive board previously recommended by the SO-100 team was tested and found unable to drive all eight servos of the PingTi Arm. Therefore, the Feetech USB Drive board is used instead.
-
+> 1. The prices listed above are for reference only; actual prices may vary due to market fluctuations.
+> 2. Links for components other than servo motors and USB driver boards are provided for reference only; you may purchase equivalent products with the same specifications from other vendors.
+> 3. The Waveshare USB Drive board previously recommended by the SO-100 team was tested and found unable to drive all eight servos of the PingTi Arm. Therefore, the Feetech USB Drive board is used instead. 
+> 4. If you are modifying an SO-ARM101 kit that comes with a [Seeed Studio XIAO servo driver board](https://www.alibaba.com/product-detail/105990190-Bus-Servo-Driver-Board-for_1601428837475.html?spm=a2700.prosearch.normal_offer.d_image.2d1b67afJlKrZq&priceId=28df2f18a4dd41449be6e21160bc605d), you don't have to buy the additional motor board, those are also capable of driving a PingTi Arm.
 
 #### Parts for SO100 Leader Arm:
 
