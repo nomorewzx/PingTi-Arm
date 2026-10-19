@@ -1,0 +1,380 @@
+{
+  "schema": "pingti-new-calib-validation/1",
+  "status": "passed",
+  "scope": "CAD geometry, nominal coordinate conventions, mesh properties, and inertial consistency; not physical encoder or contact-task validation.",
+  "physical_links": 16,
+  "moving_joints": 6,
+  "independent_fusion_poses": 72,
+  "max_fk_point_error_mm": 8.457327256494761e-11,
+  "max_fk_orientation_error_deg": 1.6507959727033844e-11,
+  "so_wrist_reference_angle_deg": 177.21087010114647,
+  "all_inertias_positive_definite_and_triangle_inequality": true,
+  "max_native_mesh_volume_relative_error": 0.0008135954273035262,
+  "max_native_mesh_com_error_mm": 0.02836694904782098,
+  "mass_total_kg": 0.885035480330341,
+  "temporary_cad_pose_restored_max_transform_difference": 1.5534490590965595e-13,
+  "source_f3d_preserved": true,
+  "original_urdf_preserved": true,
+  "pose_results": [
+    {
+      "pose": "nominal_midpoint_roll_plane",
+      "max_point_error_mm": 4.449711568904639e-11,
+      "max_orientation_error_deg": 8.553348301182918e-12
+    },
+    {
+      "pose": "roll_reference_+2.789129900",
+      "max_point_error_mm": 4.325451238558015e-11,
+      "max_orientation_error_deg": 5.708753240506686e-12
+    },
+    {
+      "pose": "roll_reference_-2.789129900",
+      "max_point_error_mm": 4.369017313294393e-11,
+      "max_orientation_error_deg": 5.6778648811461816e-12
+    },
+    {
+      "pose": "roll_reference_+90.000000000",
+      "max_point_error_mm": 4.313857826476159e-11,
+      "max_orientation_error_deg": 5.057841407741498e-12
+    },
+    {
+      "pose": "roll_reference_-90.000000000",
+      "max_point_error_mm": 4.285506728695008e-11,
+      "max_orientation_error_deg": 5.057841407741498e-12
+    },
+    {
+      "pose": "so101_new_calib_wrist_reference",
+      "max_point_error_mm": 4.341072173668897e-11,
+      "max_orientation_error_deg": 5.057841407741498e-12
+    },
+    {
+      "pose": "single_base_yaw_-110.000000",
+      "max_point_error_mm": 4.886119785094752e-11,
+      "max_orientation_error_deg": 1.083206561970819e-11
+    },
+    {
+      "pose": "single_base_yaw_+110.000000",
+      "max_point_error_mm": 5.5189147748781925e-11,
+      "max_orientation_error_deg": 9.579071641821434e-12
+    },
+    {
+      "pose": "single_base_yaw_+5.000000",
+      "max_point_error_mm": 6.451398348905156e-11,
+      "max_orientation_error_deg": 1.135278289157198e-11
+    },
+    {
+      "pose": "single_shoulder_pitch_-110.000000",
+      "max_point_error_mm": 5.970997833737381e-11,
+      "max_orientation_error_deg": 9.721639098254367e-12
+    },
+    {
+      "pose": "single_shoulder_pitch_+100.000000",
+      "max_point_error_mm": 8.457327256494761e-11,
+      "max_orientation_error_deg": 1.4850155765740775e-11
+    },
+    {
+      "pose": "single_shoulder_pitch_+0.000000",
+      "max_point_error_mm": 6.208673489874187e-11,
+      "max_orientation_error_deg": 1.4209683233361213e-11
+    },
+    {
+      "pose": "single_elbow_pitch_-90.000000",
+      "max_point_error_mm": 4.922943129667963e-11,
+      "max_orientation_error_deg": 1.6075028806775324e-11
+    },
+    {
+      "pose": "single_elbow_pitch_+110.000000",
+      "max_point_error_mm": 7.956513069821435e-11,
+      "max_orientation_error_deg": 9.166413875590522e-12
+    },
+    {
+      "pose": "single_elbow_pitch_+15.000000",
+      "max_point_error_mm": 6.770591734427848e-11,
+      "max_orientation_error_deg": 1.1227642667247618e-11
+    },
+    {
+      "pose": "single_wrist_pitch_-110.000000",
+      "max_point_error_mm": 6.501906366672195e-11,
+      "max_orientation_error_deg": 1.6507959727033844e-11
+    },
+    {
+      "pose": "single_wrist_pitch_+110.000000",
+      "max_point_error_mm": 6.501906366672195e-11,
+      "max_orientation_error_deg": 8.146620795994756e-12
+    },
+    {
+      "pose": "single_wrist_pitch_+5.000000",
+      "max_point_error_mm": 6.501906366672195e-11,
+      "max_orientation_error_deg": 1.0859404503937745e-11
+    },
+    {
+      "pose": "single_wrist_roll_-179.000000",
+      "max_point_error_mm": 6.501906366672195e-11,
+      "max_orientation_error_deg": 1.1020884013135563e-11
+    },
+    {
+      "pose": "single_wrist_roll_+179.000000",
+      "max_point_error_mm": 6.501906366672195e-11,
+      "max_orientation_error_deg": 1.0873338291520357e-11
+    },
+    {
+      "pose": "single_wrist_roll_+5.000000",
+      "max_point_error_mm": 6.501906366672195e-11,
+      "max_orientation_error_deg": 1.143514374228873e-11
+    },
+    {
+      "pose": "single_gripper_moving_-12.000000",
+      "max_point_error_mm": 6.501906366672195e-11,
+      "max_orientation_error_deg": 1.1369334601612444e-11
+    },
+    {
+      "pose": "single_gripper_moving_+90.000000",
+      "max_point_error_mm": 6.501906366672195e-11,
+      "max_orientation_error_deg": 1.1473885036665225e-11
+    },
+    {
+      "pose": "single_gripper_moving_-7.000000",
+      "max_point_error_mm": 6.501906366672195e-11,
+      "max_orientation_error_deg": 1.1393849787932653e-11
+    },
+    {
+      "pose": "random_00",
+      "max_point_error_mm": 4.805647083374442e-11,
+      "max_orientation_error_deg": 1.6338497109249737e-11
+    },
+    {
+      "pose": "random_01",
+      "max_point_error_mm": 5.905914477364805e-11,
+      "max_orientation_error_deg": 9.830674572432731e-12
+    },
+    {
+      "pose": "random_02",
+      "max_point_error_mm": 5.87094986881914e-11,
+      "max_orientation_error_deg": 9.696741194115893e-12
+    },
+    {
+      "pose": "random_03",
+      "max_point_error_mm": 5.346396994775577e-11,
+      "max_orientation_error_deg": 9.401551003275496e-12
+    },
+    {
+      "pose": "random_04",
+      "max_point_error_mm": 5.210078826537919e-11,
+      "max_orientation_error_deg": 9.883169391914498e-12
+    },
+    {
+      "pose": "random_05",
+      "max_point_error_mm": 6.957536705047275e-11,
+      "max_orientation_error_deg": 1.442634207573046e-11
+    },
+    {
+      "pose": "random_06",
+      "max_point_error_mm": 5.6644390378902396e-11,
+      "max_orientation_error_deg": 9.747726919942748e-12
+    },
+    {
+      "pose": "random_07",
+      "max_point_error_mm": 5.918788481990331e-11,
+      "max_orientation_error_deg": 1.281335210636638e-11
+    },
+    {
+      "pose": "random_08",
+      "max_point_error_mm": 6.829244715609749e-11,
+      "max_orientation_error_deg": 9.956570341395782e-12
+    },
+    {
+      "pose": "random_09",
+      "max_point_error_mm": 7.465562626324838e-11,
+      "max_orientation_error_deg": 8.194928891304146e-12
+    },
+    {
+      "pose": "random_10",
+      "max_point_error_mm": 5.1858409333804977e-11,
+      "max_orientation_error_deg": 1.4290185373049837e-11
+    },
+    {
+      "pose": "random_11",
+      "max_point_error_mm": 3.940228098458801e-11,
+      "max_orientation_error_deg": 1.2288361598334082e-11
+    },
+    {
+      "pose": "random_12",
+      "max_point_error_mm": 3.996105324379787e-11,
+      "max_orientation_error_deg": 1.1668730305618762e-11
+    },
+    {
+      "pose": "random_13",
+      "max_point_error_mm": 6.639691212096842e-11,
+      "max_orientation_error_deg": 1.4627664388875162e-11
+    },
+    {
+      "pose": "random_14",
+      "max_point_error_mm": 6.416420518692672e-11,
+      "max_orientation_error_deg": 9.798728755026517e-12
+    },
+    {
+      "pose": "random_15",
+      "max_point_error_mm": 3.551266584047942e-11,
+      "max_orientation_error_deg": 7.936690735700037e-12
+    },
+    {
+      "pose": "random_16",
+      "max_point_error_mm": 6.325126044217585e-11,
+      "max_orientation_error_deg": 1.4842089461623128e-11
+    },
+    {
+      "pose": "random_17",
+      "max_point_error_mm": 6.248120378952176e-11,
+      "max_orientation_error_deg": 7.731869648300106e-12
+    },
+    {
+      "pose": "random_18",
+      "max_point_error_mm": 6.637555423459367e-11,
+      "max_orientation_error_deg": 8.623125589138047e-12
+    },
+    {
+      "pose": "random_19",
+      "max_point_error_mm": 4.6664263221371086e-11,
+      "max_orientation_error_deg": 1.5166363765800947e-11
+    },
+    {
+      "pose": "random_20",
+      "max_point_error_mm": 5.1288488706082487e-11,
+      "max_orientation_error_deg": 1.5498081344903172e-11
+    },
+    {
+      "pose": "random_21",
+      "max_point_error_mm": 7.266359544400761e-11,
+      "max_orientation_error_deg": 9.758565010215337e-12
+    },
+    {
+      "pose": "random_22",
+      "max_point_error_mm": 6.956314783994002e-11,
+      "max_orientation_error_deg": 1.5315021144330393e-11
+    },
+    {
+      "pose": "random_23",
+      "max_point_error_mm": 6.16399157731336e-11,
+      "max_orientation_error_deg": 1.4853383274302908e-11
+    },
+    {
+      "pose": "random_24",
+      "max_point_error_mm": 4.290373708090512e-11,
+      "max_orientation_error_deg": 1.3432699169286309e-11
+    },
+    {
+      "pose": "random_25",
+      "max_point_error_mm": 4.828213443793838e-11,
+      "max_orientation_error_deg": 1.3856084084388689e-11
+    },
+    {
+      "pose": "random_26",
+      "max_point_error_mm": 4.781011146436238e-11,
+      "max_orientation_error_deg": 8.481716429613454e-12
+    },
+    {
+      "pose": "random_27",
+      "max_point_error_mm": 4.226002357169777e-11,
+      "max_orientation_error_deg": 1.3415774129600368e-11
+    },
+    {
+      "pose": "random_28",
+      "max_point_error_mm": 4.5044212315319183e-11,
+      "max_orientation_error_deg": 1.5868120140837215e-11
+    },
+    {
+      "pose": "random_29",
+      "max_point_error_mm": 7.813741632407112e-11,
+      "max_orientation_error_deg": 1.1253688813401286e-11
+    },
+    {
+      "pose": "random_30",
+      "max_point_error_mm": 5.976653926770828e-11,
+      "max_orientation_error_deg": 1.47265107806996e-11
+    },
+    {
+      "pose": "random_31",
+      "max_point_error_mm": 6.455039935518332e-11,
+      "max_orientation_error_deg": 1.522479260839741e-11
+    },
+    {
+      "pose": "random_32",
+      "max_point_error_mm": 5.549636247840917e-11,
+      "max_orientation_error_deg": 1.2327860861754327e-11
+    },
+    {
+      "pose": "random_33",
+      "max_point_error_mm": 4.611875062700311e-11,
+      "max_orientation_error_deg": 1.3299288792010515e-11
+    },
+    {
+      "pose": "random_34",
+      "max_point_error_mm": 7.279166705499451e-11,
+      "max_orientation_error_deg": 1.4820664577072453e-11
+    },
+    {
+      "pose": "random_35",
+      "max_point_error_mm": 6.33824807899165e-11,
+      "max_orientation_error_deg": 1.52607738637655e-11
+    },
+    {
+      "pose": "random_36",
+      "max_point_error_mm": 5.6543225455514443e-11,
+      "max_orientation_error_deg": 9.593663191011929e-12
+    },
+    {
+      "pose": "random_37",
+      "max_point_error_mm": 6.081980683352268e-11,
+      "max_orientation_error_deg": 1.4666857177081363e-11
+    },
+    {
+      "pose": "random_38",
+      "max_point_error_mm": 7.468757223538638e-11,
+      "max_orientation_error_deg": 1.1320281965259538e-11
+    },
+    {
+      "pose": "random_39",
+      "max_point_error_mm": 7.606897027421554e-11,
+      "max_orientation_error_deg": 7.803249535252552e-12
+    },
+    {
+      "pose": "random_40",
+      "max_point_error_mm": 5.551800036436938e-11,
+      "max_orientation_error_deg": 1.2998345899838467e-11
+    },
+    {
+      "pose": "random_41",
+      "max_point_error_mm": 7.10573201188025e-11,
+      "max_orientation_error_deg": 1.4460171744207984e-11
+    },
+    {
+      "pose": "random_42",
+      "max_point_error_mm": 6.055939680198051e-11,
+      "max_orientation_error_deg": 1.4987599301910996e-11
+    },
+    {
+      "pose": "random_43",
+      "max_point_error_mm": 3.918592136894525e-11,
+      "max_orientation_error_deg": 8.928491340974435e-12
+    },
+    {
+      "pose": "random_44",
+      "max_point_error_mm": 4.5533388197479465e-11,
+      "max_orientation_error_deg": 1.0290395244311264e-11
+    },
+    {
+      "pose": "random_45",
+      "max_point_error_mm": 3.415650348837783e-11,
+      "max_orientation_error_deg": 9.37365387789493e-12
+    },
+    {
+      "pose": "random_46",
+      "max_point_error_mm": 7.027521005920818e-11,
+      "max_orientation_error_deg": 1.3352830136695244e-11
+    },
+    {
+      "pose": "random_47",
+      "max_point_error_mm": 5.902234738509803e-11,
+      "max_orientation_error_deg": 1.2150600337695094e-11
+    }
+  ]
+}

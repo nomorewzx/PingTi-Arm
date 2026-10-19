@@ -1,0 +1,437 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="pingti_arm_v4_new_calib">
+  <!--Derived from the local PingTi v4 F3D in SI units. See provenance and validation_report.html. Original v3 URDF is preserved.-->
+  <mujoco>
+    <compiler meshdir="meshes" discardvisual="false" fusestatic="false" />
+  </mujoco>
+  <material name="printed">
+    <color rgba="0.88 0.67 0.19 1" />
+  </material>
+  <material name="servo">
+    <color rgba="0.16 0.18 0.21 1" />
+  </material>
+  <link name="elbow_link">
+    <inertial>
+      <origin xyz="-0.1287219641401 -0.00070982329751493 -0.032281499374845" rpy="0 0 0" />
+      <mass value="0.09775001089453" />
+      <inertia ixx="6.4297788584354e-05" iyy="0.00077334726821617" izz="0.00071603448500571" ixy="-3.4633057824742e-06" ixz="-3.5037762755018e-05" iyz="-1.5879082469137e-07" />
+    </inertial>
+    <visual name="elbow_link_visual">
+      <origin xyz="-0.35484990733661 0.032 -0.0182" rpy="-4.5359502050208e-30 0 1.3877787807814e-17" />
+      <geometry>
+        <mesh filename="meshes/component_00.stl" scale="1 1 1" />
+      </geometry>
+      <material name="printed" />
+    </visual>
+    <collision name="elbow_link_collision">
+      <origin xyz="-0.35484990733661 0.032 -0.0182" rpy="-4.5359502050208e-30 0 1.3877787807814e-17" />
+      <geometry>
+        <mesh filename="meshes/component_00.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sts3215_shoulder_pitch_2">
+    <inertial>
+      <origin xyz="-0.00030097243678957 6.7548273522805e-12 0.00012706492472184" rpy="0 0 0" />
+      <mass value="0.054164875525537" />
+      <inertia ixx="7.5683755689627e-06" iyy="1.4000830271768e-05" izz="1.1723863864379e-05" ixy="7.6474349463052e-15" ixz="-1.060980380883e-07" iyz="5.618268068675e-15" />
+    </inertial>
+    <visual name="sts3215_shoulder_pitch_2_visual">
+      <origin xyz="0 6.3296451841662e-18 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/component_01.stl" scale="1 1 1" />
+      </geometry>
+      <material name="servo" />
+    </visual>
+    <collision name="sts3215_shoulder_pitch_2_collision">
+      <origin xyz="0 6.3296451841662e-18 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/component_01.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sts3215_shoulder_pitch_1">
+    <inertial>
+      <origin xyz="-0.00030097243678957 6.7547471276849e-12 0.00012706492472184" rpy="0 0 0" />
+      <mass value="0.054164875525537" />
+      <inertia ixx="7.5683755689627e-06" iyy="1.4000830271768e-05" izz="1.1723863864379e-05" ixy="7.6474349463052e-15" ixz="-1.060980380883e-07" iyz="5.618268068675e-15" />
+    </inertial>
+    <visual name="sts3215_shoulder_pitch_1_visual">
+      <origin xyz="0 -7.3894950377458e-17 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/component_02.stl" scale="1 1 1" />
+      </geometry>
+      <material name="servo" />
+    </visual>
+    <collision name="sts3215_shoulder_pitch_1_collision">
+      <origin xyz="0 -7.3894950377458e-17 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/component_02.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sts3215_base_yaw">
+    <inertial>
+      <origin xyz="-0.00030097243678953 6.7548210226353e-12 0.00012706492472184" rpy="0 0 0" />
+      <mass value="0.054164875525537" />
+      <inertia ixx="7.5683755689627e-06" iyy="1.4000830271768e-05" izz="1.1723863864379e-05" ixy="7.6474349463052e-15" ixz="-1.060980380883e-07" iyz="5.618268068675e-15" />
+    </inertial>
+    <visual name="sts3215_base_yaw_visual">
+      <origin xyz="3.9262563592585e-17 3.9443045261051e-31 0" rpy="-2.3066727363146e-32 0 0" />
+      <geometry>
+        <mesh filename="meshes/component_03.stl" scale="1 1 1" />
+      </geometry>
+      <material name="servo" />
+    </visual>
+    <collision name="sts3215_base_yaw_collision">
+      <origin xyz="3.9262563592585e-17 3.9443045261051e-31 0" rpy="-2.3066727363146e-32 0 0" />
+      <geometry>
+        <mesh filename="meshes/component_03.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wrist_link">
+    <inertial>
+      <origin xyz="-0.014809781272074 -5.1104328153014e-05 -0.026379939160006" rpy="0 0 0" />
+      <mass value="0.017666250470483" />
+      <inertia ixx="8.5143702321296e-06" iyy="1.4751923687345e-05" izz="9.3263710570494e-06" ixy="-3.0805879667621e-09" ixz="4.9597511585603e-07" iyz="2.3808258080657e-08" />
+    </inertial>
+    <visual name="wrist_link_visual">
+      <origin xyz="-0.0181 -1.1102230246252e-16 -0.028" rpy="-1.3877787807814e-17 0 1.1832913578315e-30" />
+      <geometry>
+        <mesh filename="meshes/component_04.stl" scale="1 1 1" />
+      </geometry>
+      <material name="printed" />
+    </visual>
+    <collision name="wrist_link_collision">
+      <origin xyz="-0.0181 -1.1102230246252e-16 -0.028" rpy="-1.3877787807814e-17 0 1.1832913578315e-30" />
+      <geometry>
+        <mesh filename="meshes/component_04.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="gripper_mount">
+    <inertial>
+      <origin xyz="-0.015652317964029 0.0013362124113398 0.020305776130781" rpy="0 0 0" />
+      <mass value="0.03300965386911" />
+      <inertia ixx="2.2226371870221e-05" iyy="2.4594443051488e-05" izz="1.2254334574377e-05" ixy="3.0434393296601e-07" ixz="4.1144680908892e-06" iyz="-8.2052662847574e-08" />
+    </inertial>
+    <visual name="gripper_mount_visual">
+      <origin xyz="-0.0018890910193863 0.0019290762350086 -0.0089999999999999" rpy="1.7347234759768e-18 0 3.2526065174565e-18" />
+      <geometry>
+        <mesh filename="meshes/component_05.stl" scale="1 1 1" />
+      </geometry>
+      <material name="printed" />
+    </visual>
+    <collision name="gripper_mount_collision">
+      <origin xyz="-0.0018890910193863 0.0019290762350086 -0.0089999999999999" rpy="1.7347234759768e-18 0 3.2526065174565e-18" />
+      <geometry>
+        <mesh filename="meshes/component_05.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sts3215_wrist_roll">
+    <inertial>
+      <origin xyz="-0.00030097243678957 6.7547655150108e-12 0.00012706492472187" rpy="0 0 0" />
+      <mass value="0.054164875525537" />
+      <inertia ixx="7.5683755689627e-06" iyy="1.4000830271768e-05" izz="1.1723863864379e-05" ixy="7.6474349433604e-15" ixz="-1.060980380883e-07" iyz="5.6182680054765e-15" />
+    </inertial>
+    <visual name="sts3215_wrist_roll_visual">
+      <origin xyz="0 -5.5511151231258e-17 2.7755575615629e-17" rpy="-2.7755575615629e-17 0 -9.4663308626521e-30" />
+      <geometry>
+        <mesh filename="meshes/component_06.stl" scale="1 1 1" />
+      </geometry>
+      <material name="servo" />
+    </visual>
+    <collision name="sts3215_wrist_roll_collision">
+      <origin xyz="0 -5.5511151231258e-17 2.7755575615629e-17" rpy="-2.7755575615629e-17 0 -9.4663308626521e-30" />
+      <geometry>
+        <mesh filename="meshes/component_06.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.028789886360215 -3.2942227972099e-06 0.025544321515403" rpy="0 0 0" />
+      <mass value="0.085715920663356" />
+      <inertia ixx="9.0146012147844e-05" iyy="8.7267601842164e-05" izz="9.5733101807873e-05" ixy="2.5054883285615e-09" ixz="1.5924772330321e-05" iyz="1.0603915100097e-08" />
+    </inertial>
+    <visual name="base_link_visual">
+      <origin xyz="-0.045200000000005 1.9554727239511e-15 2.0000000012337e-05" rpy="1.5707963267951 2.2204460492503e-16 1.5707963267949" />
+      <geometry>
+        <mesh filename="meshes/component_07.stl" scale="1 1 1" />
+      </geometry>
+      <material name="printed" />
+    </visual>
+    <collision name="base_link_collision">
+      <origin xyz="-0.045200000000005 1.9554727239511e-15 2.0000000012337e-05" rpy="1.5707963267951 2.2204460492503e-16 1.5707963267949" />
+      <geometry>
+        <mesh filename="meshes/component_07.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="moving_gripper">
+    <inertial>
+      <origin xyz="-0.00050035469094101 -0.029253216640882 0.020784320160304" rpy="0 0 0" />
+      <mass value="0.011718638338098" />
+      <inertia ixx="6.4051942082781e-06" iyy="1.750541766859e-06" izz="5.1972166762493e-06" ixy="-3.0942376100478e-07" ixz="-6.0948875730877e-09" iyz="-1.1155625088004e-07" />
+    </inertial>
+    <visual name="moving_gripper_visual">
+      <origin xyz="0.0011194613448214 0.0011431562874121 0.0204" rpy="-1.7347234759768e-18 0 -3.4694469519536e-18" />
+      <geometry>
+        <mesh filename="meshes/component_08.stl" scale="1 1 1" />
+      </geometry>
+      <material name="printed" />
+    </visual>
+    <collision name="moving_gripper_collision">
+      <origin xyz="0.0011194613448214 0.0011431562874121 0.0204" rpy="-1.7347234759768e-18 0 -3.4694469519536e-18" />
+      <geometry>
+        <mesh filename="meshes/component_08.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sts3215_elbow_pitch_2">
+    <inertial>
+      <origin xyz="-0.00030097243678958 6.7547655156609e-12 0.00012706492472184" rpy="0 0 0" />
+      <mass value="0.054164875525537" />
+      <inertia ixx="7.5683755689627e-06" iyy="1.4000830271768e-05" izz="1.1723863864379e-05" ixy="7.6474346469723e-15" ixz="-1.060980380883e-07" iyz="5.6182680701474e-15" />
+    </inertial>
+    <visual name="sts3215_elbow_pitch_2_visual">
+      <origin xyz="-1.3877787807814e-17 -5.5511151231258e-17 0" rpy="-1.4729512214674e-30 0 0" />
+      <geometry>
+        <mesh filename="meshes/component_09.stl" scale="1 1 1" />
+      </geometry>
+      <material name="servo" />
+    </visual>
+    <collision name="sts3215_elbow_pitch_2_collision">
+      <origin xyz="-1.3877787807814e-17 -5.5511151231258e-17 0" rpy="-1.4729512214674e-30 0 0" />
+      <geometry>
+        <mesh filename="meshes/component_09.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sts3215_elbow_pitch_1">
+    <inertial>
+      <origin xyz="-0.00030097243678962 6.7547655114841e-12 0.00012706492472184" rpy="0 0 0" />
+      <mass value="0.054164875525537" />
+      <inertia ixx="7.5683755689627e-06" iyy="1.4000830271768e-05" izz="1.1723863864379e-05" ixy="7.6474349463052e-15" ixz="-1.060980380883e-07" iyz="5.618268068675e-15" />
+    </inertial>
+    <visual name="sts3215_elbow_pitch_1_visual">
+      <origin xyz="-4.8572257327351e-17 -5.5511151231258e-17 0" rpy="-4.560602108309e-30 0 0" />
+      <geometry>
+        <mesh filename="meshes/component_10.stl" scale="1 1 1" />
+      </geometry>
+      <material name="servo" />
+    </visual>
+    <collision name="sts3215_elbow_pitch_1_collision">
+      <origin xyz="-4.8572257327351e-17 -5.5511151231258e-17 0" rpy="-4.560602108309e-30 0 0" />
+      <geometry>
+        <mesh filename="meshes/component_10.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sts3215_wrist_pitch">
+    <inertial>
+      <origin xyz="-0.00030097243678961 6.7547655114841e-12 0.00012706492472184" rpy="0 0 0" />
+      <mass value="0.054164875525537" />
+      <inertia ixx="7.5683755689627e-06" iyy="1.4000830271768e-05" izz="1.1723863864379e-05" ixy="7.6474345577041e-15" ixz="-1.060980380883e-07" iyz="5.618268068675e-15" />
+    </inertial>
+    <visual name="sts3215_wrist_pitch_visual">
+      <origin xyz="-4.1633363423443e-17 -5.5511151231258e-17 0" rpy="5.9164567891576e-30 0 1.3877787807814e-17" />
+      <geometry>
+        <mesh filename="meshes/component_11.stl" scale="1 1 1" />
+      </geometry>
+      <material name="servo" />
+    </visual>
+    <collision name="sts3215_wrist_pitch_collision">
+      <origin xyz="-4.1633363423443e-17 -5.5511151231258e-17 0" rpy="5.9164567891576e-30 0 1.3877787807814e-17" />
+      <geometry>
+        <mesh filename="meshes/component_11.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="sts3215_gripper">
+    <inertial>
+      <origin xyz="-0.0003009724367894 6.754793250132e-12 0.00012706492472185" rpy="0 0 0" />
+      <mass value="0.054164875525537" />
+      <inertia ixx="7.5683755689627e-06" iyy="1.4000830271768e-05" izz="1.1723863864379e-05" ixy="7.6474349780174e-15" ixz="-1.060980380883e-07" iyz="5.6182680181601e-15" />
+    </inertial>
+    <visual name="sts3215_gripper_visual">
+      <origin xyz="1.6653345369377e-16 -2.7755575615629e-17 6.9388939039072e-18" rpy="0 0 4.1633363423443e-17" />
+      <geometry>
+        <mesh filename="meshes/component_12.stl" scale="1 1 1" />
+      </geometry>
+      <material name="servo" />
+    </visual>
+    <collision name="sts3215_gripper_collision">
+      <origin xyz="1.6653345369377e-16 -2.7755575615629e-17 6.9388939039072e-18" rpy="0 0 4.1633363423443e-17" />
+      <geometry>
+        <mesh filename="meshes/component_12.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wrist_mount_link">
+    <inertial>
+      <origin xyz="-0.039908117174527 -0.036444231228243 4.9793235363328e-05" rpy="0 0 0" />
+      <mass value="0.0080150347737873" />
+      <inertia ixx="4.3012853517502e-06" iyy="3.391195785252e-06" izz="1.980623181734e-06" ixy="-3.9123072499939e-09" ixz="-1.4165219286944e-08" iyz="-1.2911417936532e-08" />
+    </inertial>
+    <visual name="wrist_mount_link_visual">
+      <origin xyz="5.5511151231258e-17 0 0" rpy="1.9031269338457e-29 0 -1.3877787807814e-17" />
+      <geometry>
+        <mesh filename="meshes/component_13.stl" scale="1 1 1" />
+      </geometry>
+      <material name="printed" />
+    </visual>
+    <collision name="wrist_mount_link_collision">
+      <origin xyz="5.5511151231258e-17 0 0" rpy="1.9031269338457e-29 0 -1.3877787807814e-17" />
+      <geometry>
+        <mesh filename="meshes/component_13.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="base_yaw_link">
+    <inertial>
+      <origin xyz="-4.07362679921e-05 0.036289992380434 0.033873664784687" rpy="0 0 0" />
+      <mass value="0.059384668729743" />
+      <inertia ixx="4.412481008531e-05" iyy="2.6589912467875e-05" izz="4.7224158236906e-05" ixy="-6.7538887693156e-08" ixz="-4.6860956365261e-08" iyz="-2.9711577418532e-06" />
+    </inertial>
+    <visual name="base_yaw_link_visual">
+      <origin xyz="0.0081739523986128 -0.50256451586815 -0.039502064789484" rpy="1.2621774483536e-29 0 -9.7736995079143e-33" />
+      <geometry>
+        <mesh filename="meshes/component_14.stl" scale="1 1 1" />
+      </geometry>
+      <material name="printed" />
+    </visual>
+    <collision name="base_yaw_link_collision">
+      <origin xyz="0.0081739523986128 -0.50256451586815 -0.039502064789484" rpy="1.2621774483536e-29 0 -9.7736995079143e-33" />
+      <geometry>
+        <mesh filename="meshes/component_14.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="shoulder_link">
+    <inertial>
+      <origin xyz="-0.040628145041509 -1.3161539077297e-05 0.11627222610288" rpy="0 0 0" />
+      <mass value="0.13845629838693" />
+      <inertia ixx="0.00079546480856302" iyy="0.00092294961931084" izz="0.00013723123109711" ixy="1.3244532069963e-07" ixz="9.1572427366795e-07" iyz="5.2987190460764e-06" />
+    </inertial>
+    <visual name="shoulder_link_visual">
+      <origin xyz="-0.204884 -0.080850252531694 -0.05757988365052" rpy="6.9388939039072e-18 0 -3.9443045261051e-31" />
+      <geometry>
+        <mesh filename="meshes/component_15.stl" scale="1 1 1" />
+      </geometry>
+      <material name="printed" />
+    </visual>
+    <collision name="shoulder_link_collision">
+      <origin xyz="-0.204884 -0.080850252531694 -0.05757988365052" rpy="6.9388939039072e-18 0 -3.9443045261051e-31" />
+      <geometry>
+        <mesh filename="meshes/component_15.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="elbow_flex" type="revolute">
+    <parent link="sts3215_elbow_pitch_1" />
+    <child link="elbow_link" />
+    <origin xyz="0.0125 0 0.0202" rpy="8.8817841970013e-16 -1.0658141036402e-14 2.9670597283904" />
+    <axis xyz="1.2852344496266e-14 1.3541773235597e-15 1" />
+    <limit lower="-1.7453292519943" upper="1.7453292519943" effort="6.7" velocity="1.0" />
+    <dynamics damping="0.6" friction="0.052" />
+  </joint>
+  <joint name="elbow_wrist_servo_connect" type="fixed">
+    <parent link="elbow_link" />
+    <child link="sts3215_wrist_pitch" />
+    <origin xyz="-0.27809981467322 0.0023249995288657 -0.03447081446499" rpy="3.1415926535898 4.4408920985006e-16 3.1415926535898" />
+  </joint>
+  <joint name="wrist_flex" type="revolute">
+    <parent link="sts3215_wrist_pitch" />
+    <child link="wrist_link" />
+    <origin xyz="0.01205 -0.00045000000000001 0.0202" rpy="-3.4000580129439e-16 -1.5707963267949 0" />
+    <axis xyz="-1 -1.3877787800624e-17 -3.9788053653364e-19" />
+    <limit lower="-1.9198621771938" upper="1.9198621771938" effort="3.35" velocity="1.0" />
+    <dynamics damping="0.6" friction="0.052" />
+  </joint>
+  <joint name="wrist_wrist_roll_connect" type="fixed">
+    <parent link="wrist_link" />
+    <child link="sts3215_wrist_roll" />
+    <origin xyz="-0.005600000000003 -1.6653345369377e-16 -0.04052045546961" rpy="3.1415926535898 -1.5232259897857e-13 -3.1415926535898" />
+  </joint>
+  <joint name="wrist_roll" type="revolute">
+    <parent link="sts3215_wrist_roll" />
+    <child link="gripper_mount" />
+    <origin xyz="0.014139359631076 0.00044999999999995 0.0202" rpy="1.8873791418628e-15 4.4408920985006e-16 1.6194758267957" />
+    <axis xyz="-8.3266726846887e-17 -1.8041124150159e-15 -1" />
+    <limit lower="-3.1415926535898" upper="3.1415926535898" effort="3.35" velocity="1.0" />
+    <dynamics damping="0.6" friction="0.052" />
+  </joint>
+  <joint name="wrist_griper_mount_connect" type="fixed">
+    <parent link="gripper_mount" />
+    <child link="sts3215_gripper" />
+    <origin xyz="0.0058109089806138 0.0022790762350086 0.0144" rpy="1.5707963267949 4.4408920985006e-16 5.5511151231258e-16" />
+  </joint>
+  <joint name="gripper" type="revolute">
+    <parent link="sts3215_gripper" />
+    <child link="moving_gripper" />
+    <origin xyz="0.0125 0 0.0202" rpy="3.1415926535898 -2.4424906541753e-15 0.20943951023932" />
+    <axis xyz="-1.085286374658e-16 -2.2846308178615e-15 1" />
+    <limit lower="0" upper="1.7802358370342" effort="3.35" velocity="1.0" />
+    <dynamics damping="0.6" friction="0.052" />
+  </joint>
+  <joint name="wrist_mount_connect" type="fixed">
+    <parent link="elbow_link" />
+    <child link="wrist_mount_link" />
+    <origin xyz="-0.21734990733661 -0.032600000471132 -0.034870814465005" rpy="3.1415926535898 0 4.2188474935756e-15" />
+  </joint>
+  <joint name="base_link_mount_connect" type="fixed">
+    <parent link="base_link" />
+    <child link="sts3215_base_yaw" />
+    <origin xyz="-0.012499999999997 1.9243769004829e-17 0.048120000000007" rpy="8.8194493100078e-17 1.738609256563e-13 -1.942890293102e-15" />
+  </joint>
+  <joint name="shoulder_pan" type="revolute">
+    <parent link="sts3215_base_yaw" />
+    <child link="base_yaw_link" />
+    <origin xyz="0.0125 -3.9443045261051e-31 -0.0183" rpy="1.5707963267949 -1.7763568394003e-15 1.5707963267949" />
+    <axis xyz="-9.4256344832851e-17 -1 -5.6791381476125e-18" />
+    <limit lower="-1.9198621771938" upper="1.9198621771938" effort="3.35" velocity="1.0" />
+    <dynamics damping="0.6" friction="0.052" />
+  </joint>
+  <joint name="base_yaw_link_servo_1_connect" type="fixed">
+    <parent link="base_yaw_link" />
+    <child link="sts3215_shoulder_pitch_1" />
+    <origin xyz="0.020911000000001 0.0793 0.03305" rpy="1.5707963267949 0 1.5707963267949" />
+  </joint>
+  <joint name="base_yaw_link_servo_2_connect" type="fixed">
+    <parent link="base_yaw_link" />
+    <child link="sts3215_shoulder_pitch_2" />
+    <origin xyz="-0.020911000000002 0.0793 0.03305" rpy="-1.5707963267949 -1.5543122344752e-15 1.570796326795" />
+  </joint>
+  <joint name="shoulder_lift" type="revolute">
+    <parent link="sts3215_shoulder_pitch_2" />
+    <child link="shoulder_link" />
+    <origin xyz="0.0125 4.9427395176935e-18 0.0202" rpy="-3.0543261909901 -1.5707963267949 0" />
+    <axis xyz="-1 -2.3061481863964e-15 6.0007534268318e-16" />
+    <limit lower="-1.832595714594" upper="1.832595714594" effort="6.7" velocity="1.0" />
+    <dynamics damping="0.6" friction="0.052" />
+  </joint>
+  <joint name="rigid_24" type="fixed">
+    <parent link="shoulder_link" />
+    <child link="sts3215_elbow_pitch_2" />
+    <origin xyz="-0.020138999717236 0.019199999999999 0.23164974746831" rpy="1.5707963267949 8.8817841970013e-16 1.5707963267949" />
+  </joint>
+  <joint name="rigid_25" type="fixed">
+    <parent link="shoulder_link" />
+    <child link="sts3215_elbow_pitch_1" />
+    <origin xyz="-0.061260999717236 0.019199999999999 0.2316497474683" rpy="-1.5707963267949 -8.8817841970013e-16 1.5707963267949" />
+  </joint>
+  <link name="tool_mount_link">
+    <inertial>
+      <mass value="0" />
+      <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="tool_mount_joint" type="fixed">
+    <parent link="gripper_mount" />
+    <child link="tool_mount_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+</robot>

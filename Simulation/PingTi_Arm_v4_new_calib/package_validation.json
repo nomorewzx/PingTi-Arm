@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "standalone_archive_relocation": true,
+  "all_packaged_file_hashes_match": true,
+  "mujoco_dof_after_relocation": 6,
+  "mass_kg_after_relocation": 0.8850354803303333
+}

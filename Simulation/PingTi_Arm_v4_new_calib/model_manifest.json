@@ -1,0 +1,1033 @@
+{
+  "schema": "pingti-new-calib-model/1",
+  "urdf": "pingti_arm_v4_new_calib.urdf",
+  "urdf_sha256": "35d904e6c0b0774bfb19fb74cd33eb0403390b84148af8f7f20112737fee2d99",
+  "source_f3d_sha256": "d593c01c38da6e048790d1c9c18e48add82de338029c5f8759322417adfaf582",
+  "original_urdf_sha256": "fdb1781047c65f24d7d44042dd886784317775a60b9606de11121d5bd7e92c85",
+  "fusion_version": "2704.1.53",
+  "cad_from_base": [
+    [
+      0.0,
+      1.0,
+      0.0,
+      -2.5416704809531846e-15
+    ],
+    [
+      -1.0,
+      0.0,
+      0.0,
+      0.7948800343277264
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.04467793199520801
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "reference": {
+    "repository": "https://github.com/TheRobotStudio/SO-ARM100",
+    "local_commit": "608122e9ac330a753735f2e18aee73338e9ac407",
+    "files": [
+      {
+        "original_path": "/Users/zxwang/repos/SO-ARM100/Simulation/SO101/so101_new_calib.urdf",
+        "saved_copy": "provenance/so_arm_reference/so101_new_calib.urdf",
+        "sha256": "3a65d2d35e68a8d2f0c2cc176d19b884506543c93ba72980145b80abe276022c"
+      },
+      {
+        "original_path": "/Users/zxwang/repos/SO-ARM100/Simulation/SO101/assets/moving_jaw_so101_v1.stl",
+        "saved_copy": "provenance/so_arm_reference/moving_jaw_so101_v1.stl",
+        "sha256": "785a9dded2f474bc1d869e0d3dae398a3dcd9c0c345640040472210d2861fa9d"
+      },
+      {
+        "original_path": "/Users/zxwang/repos/SO-ARM100/Simulation/SO101/assets/wrist_roll_follower_so101_v1.stl",
+        "saved_copy": "provenance/so_arm_reference/wrist_roll_follower_so101_v1.stl",
+        "sha256": "4b17b410a12d64ec39554abc3e8054d8a97384b2dc4a8d95a5ecb2a93670f5f4"
+      }
+    ],
+    "reference_model": "SO101/so101_new_calib.urdf",
+    "effective_print_density_kg_m3": 579.725379108184,
+    "density_derivation": {
+      "reference_jaw_mass_kg": 0.012,
+      "reference_jaw_mesh_volume_m3": 2.0699456039789227e-05,
+      "formula": "rho = mass of servo-free SO jaw / volume of its mesh"
+    },
+    "servo_mass_kg": 0.05416487552553728,
+    "servo_mass_derivation": {
+      "reference_gripper_link_mass_kg": 0.087,
+      "reference_printed_body_mesh_volume_m3": 5.6639101301679025e-05,
+      "formula": "servo_mass = gripper_link_mass - rho * printed_body_volume"
+    },
+    "wrist_pitch_to_jaw_signed_angle_deg": 177.21087010114752,
+    "scope": "Effective density and servo mass inferred from two separable SO link assemblies, under the user's common-density assumption. Not manufacturer measurements or identification of the entire SO model.",
+    "sts3250_mass": "Same inferred servo mass, explicitly applying the user's initial approximation."
+  },
+  "links": [
+    {
+      "name": "elbow_link",
+      "cad_occurrence": "elbow_link:1",
+      "mesh": {
+        "path": "meshes/component_00.stl",
+        "triangles": 7378,
+        "sha256": "6ef9e914c529e83ebd32f2b3516bd3404d14339a366ffc09b6cb49af18837c73",
+        "units": "m"
+      },
+      "mass_kg": 0.09775001089453046,
+      "category": "printed",
+      "cad_volume_cm3": 168.61433778335427,
+      "mesh_to_link": [
+        [
+          0.9999999999999999,
+          -2.7755575615628914e-17,
+          -4.733165431326071e-30,
+          -0.35484990733660765
+        ],
+        [
+          0.0,
+          1.0,
+          9.071900410041636e-30,
+          0.03199999999999964
+        ],
+        [
+          4.733165431326071e-30,
+          0.0,
+          1.0,
+          -0.01819999999999992
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        6.240264430501169e-05,
+        0.0007179127106572688,
+        0.0007733641868439525
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 0.00024345071218199289,
+      "mesh_vs_native_volume_relative_error": 0.0008135954273035262,
+      "mesh_vs_native_com_error_m": 1.0603524226694282e-05
+    },
+    {
+      "name": "sts3215_shoulder_pitch_2",
+      "cad_occurrence": "STS3215_shoulder_pitch_2:1",
+      "mesh": {
+        "path": "meshes/component_01.stl",
+        "triangles": 7556,
+        "sha256": "4aca49674ad26f93a10979b163c198e06de82f1300e9c31e9f7a3c2d3a3f5f61",
+        "units": "m"
+      },
+      "mass_kg": 0.05416487552553728,
+      "category": "servo",
+      "cad_volume_cm3": 36.21699148922387,
+      "mesh_to_link": [
+        [
+          1.0,
+          0.0,
+          2.9453652462762927e-30,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          6.329645184166196e-18
+        ],
+        [
+          -5.0676872944957616e-30,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        7.565668434611654e-06,
+        1.1726570998729948e-05,
+        1.4000830271767957e-05
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 6.251607671655928e-05,
+      "mesh_vs_native_volume_relative_error": 7.487380145299039e-05,
+      "mesh_vs_native_com_error_m": 4.08978951764306e-07
+    },
+    {
+      "name": "sts3215_shoulder_pitch_1",
+      "cad_occurrence": "STS3215_shoulder_pitch_1:1",
+      "mesh": {
+        "path": "meshes/component_02.stl",
+        "triangles": 7556,
+        "sha256": "856512cbdebe412227e0e8329ece1c0df1641801d75e2b82ce2e3ec928871742",
+        "units": "m"
+      },
+      "mass_kg": 0.05416487552553728,
+      "category": "servo",
+      "cad_volume_cm3": 36.21699148922387,
+      "mesh_to_link": [
+        [
+          1.0,
+          0.0,
+          2.4684149529355652e-30,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -7.389495037745811e-17
+        ],
+        [
+          -4.1959281528788284e-30,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        7.565668434611654e-06,
+        1.1726570998729948e-05,
+        1.4000830271767957e-05
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 6.25160767120298e-05,
+      "mesh_vs_native_volume_relative_error": 7.487380145276834e-05,
+      "mesh_vs_native_com_error_m": 4.0897895176233194e-07
+    },
+    {
+      "name": "sts3215_base_yaw",
+      "cad_occurrence": "STS3215_base_yaw:1",
+      "mesh": {
+        "path": "meshes/component_03.stl",
+        "triangles": 7556,
+        "sha256": "3d135c2ec12b7f578e41745618679309f9a15d064ef18e01366a38fa48e921ba",
+        "units": "m"
+      },
+      "mass_kg": 0.05416487552553728,
+      "category": "servo",
+      "cad_volume_cm3": 36.21699148922387,
+      "mesh_to_link": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          3.926256359258547e-17
+        ],
+        [
+          0.0,
+          1.0,
+          4.270001764540776e-32,
+          3.944304526105059e-31
+        ],
+        [
+          2.524354896707238e-29,
+          -3.433437080884858e-33,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        7.565668434611654e-06,
+        1.1726570998729948e-05,
+        1.4000830271767957e-05
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 6.25160767162017e-05,
+      "mesh_vs_native_volume_relative_error": 7.487380145299039e-05,
+      "mesh_vs_native_com_error_m": 4.089789517650883e-07
+    },
+    {
+      "name": "wrist_link",
+      "cad_occurrence": "wrist_link:1",
+      "mesh": {
+        "path": "meshes/component_04.stl",
+        "triangles": 20008,
+        "sha256": "fe147fd834265d4320ba8b54f6743a30656d23cb5ba7233d5669c560da45562b",
+        "units": "m"
+      },
+      "mass_kg": 0.017666250470483112,
+      "category": "printed",
+      "cad_volume_cm3": 30.47348125013925,
+      "mesh_to_link": [
+        [
+          1.0,
+          3.944304526105059e-30,
+          -4.733165431326071e-30,
+          -0.018100000000000057
+        ],
+        [
+          6.310887241768095e-30,
+          1.0,
+          2.7755575615628914e-17,
+          -1.1102230246251565e-16
+        ],
+        [
+          -6.310887241768095e-30,
+          0.0,
+          1.0,
+          -0.027999999999999775
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        8.27938624184167e-06,
+        9.56125044258766e-06,
+        1.4752028292094138e-05
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 0.0001412493396018518,
+      "mesh_vs_native_volume_relative_error": 4.1236137302669285e-05,
+      "mesh_vs_native_com_error_m": 5.664718708525431e-06
+    },
+    {
+      "name": "gripper_mount",
+      "cad_occurrence": "gripper_mount:1",
+      "mesh": {
+        "path": "meshes/component_05.stl",
+        "triangles": 10870,
+        "sha256": "bb4522bca27ea35d0ef9c1ffe213268c2b6abec6af32222cb71affbf817c4bd3",
+        "units": "m"
+      },
+      "mass_kg": 0.03300965386911038,
+      "category": "printed",
+      "cad_volume_cm3": 56.94015659602573,
+      "mesh_to_link": [
+        [
+          1.0,
+          -2.168404344971009e-18,
+          0.0,
+          -0.0018890910193862798
+        ],
+        [
+          4.336808689942018e-18,
+          1.0,
+          0.0,
+          0.0019290762350085804
+        ],
+        [
+          -5.551115123125783e-17,
+          3.469446951953614e-18,
+          0.9999999999999999,
+          -0.00899999999999987
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        1.0773545578291061e-05,
+        2.3635240311936247e-05,
+        2.4666363605859428e-05
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 0.000655826519478949,
+      "mesh_vs_native_volume_relative_error": 0.00016295968938040417,
+      "mesh_vs_native_com_error_m": 8.081431567251448e-06
+    },
+    {
+      "name": "sts3215_wrist_roll",
+      "cad_occurrence": "STS3215_wrist_roll:1",
+      "mesh": {
+        "path": "meshes/component_06.stl",
+        "triangles": 7556,
+        "sha256": "d925b14163d4f513b966cb89b36090a54c877bdf71f547f61b7c92942c571c38",
+        "units": "m"
+      },
+      "mass_kg": 0.05416487552553728,
+      "category": "servo",
+      "cad_volume_cm3": 36.21699148922387,
+      "mesh_to_link": [
+        [
+          1.0,
+          6.310887241768095e-30,
+          2.524354896707238e-29,
+          0.0
+        ],
+        [
+          -1.262177448353619e-29,
+          1.0,
+          2.7755575615628914e-17,
+          -5.551115123125783e-17
+        ],
+        [
+          0.0,
+          -2.7755575615628914e-17,
+          1.0,
+          2.7755575615628914e-17
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        7.565668434611654e-06,
+        1.1726570998729941e-05,
+        1.400083027176795e-05
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 6.251607671555064e-05,
+      "mesh_vs_native_volume_relative_error": 7.487380145299039e-05,
+      "mesh_vs_native_com_error_m": 4.0897895176278976e-07
+    },
+    {
+      "name": "base_link",
+      "cad_occurrence": "base_link (1):1",
+      "mesh": {
+        "path": "meshes/component_07.stl",
+        "triangles": 17830,
+        "sha256": "c21a57589812f0f644a500b63cbba1a9dbd6ffbe16302c2fcbef96a6de0647ad",
+        "units": "m"
+      },
+      "mass_kg": 0.08571592066335627,
+      "category": "printed",
+      "cad_volume_cm3": 147.85607764010035,
+      "mesh_to_link": [
+        [
+          3.6443070783320763e-14,
+          1.7341683644644996e-13,
+          0.9999999999999991,
+          -0.0452000000000049
+        ],
+        [
+          1.0000000000000002,
+          -5.9041770598321755e-27,
+          -3.6498581934552015e-14,
+          1.955472723951102e-15
+        ],
+        [
+          -4.501560799933839e-28,
+          0.9999999999999993,
+          -1.734168364464499e-13,
+          2.000000001233654e-05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        7.677161522603144e-05,
+        8.726759979454089e-05,
+        0.00010910750077730878
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 0.00014213374493637004,
+      "mesh_vs_native_volume_relative_error": 0.00011680422567383886,
+      "mesh_vs_native_com_error_m": 3.24753865684104e-06
+    },
+    {
+      "name": "moving_gripper",
+      "cad_occurrence": "moving_gripper:1",
+      "mesh": {
+        "path": "meshes/component_08.stl",
+        "triangles": 11482,
+        "sha256": "4dd5bca55adbcadffbcb0c3c5a66c825b5ea3819996aad3063ad2a518102ae23",
+        "units": "m"
+      },
+      "mass_kg": 0.011718638338098185,
+      "category": "printed",
+      "cad_volume_cm3": 20.214119927137673,
+      "mesh_to_link": [
+        [
+          1.0,
+          6.938893903907228e-18,
+          5.421010862427522e-18,
+          0.0011194613448214374
+        ],
+        [
+          0.0,
+          1.0,
+          3.469446951953614e-18,
+          0.0011431562874121039
+        ],
+        [
+          2.6020852139652106e-18,
+          0.0,
+          1.0,
+          0.02040000000000002
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        1.7264666947879513e-06,
+        5.200811176897192e-06,
+        6.42567477970123e-06
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 0.0003606261086189261,
+      "mesh_vs_native_volume_relative_error": 0.0001468928843599837,
+      "mesh_vs_native_com_error_m": 3.2046603681564184e-06
+    },
+    {
+      "name": "sts3215_elbow_pitch_2",
+      "cad_occurrence": "STS3215_elbow_pitch_2:1",
+      "mesh": {
+        "path": "meshes/component_09.stl",
+        "triangles": 7556,
+        "sha256": "efa385e0534068b1bd52a34e99ac2c748befc9420a44cde2c1d24b71ebb7263c",
+        "units": "m"
+      },
+      "mass_kg": 0.05416487552553728,
+      "category": "servo",
+      "cad_volume_cm3": 36.21699148922387,
+      "mesh_to_link": [
+        [
+          1.0000000000000002,
+          -1.3877787807814457e-17,
+          5.9164567891575885e-31,
+          -1.3877787807814457e-17
+        ],
+        [
+          -1.3877787807814457e-17,
+          1.0,
+          2.62542770018868e-30,
+          -5.551115123125783e-17
+        ],
+        [
+          1.5777218104420236e-30,
+          -3.2047474274603605e-31,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        7.565668434611658e-06,
+        1.1726570998729948e-05,
+        1.4000830271767957e-05
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 6.2516076716492e-05,
+      "mesh_vs_native_volume_relative_error": 7.487380145299039e-05,
+      "mesh_vs_native_com_error_m": 4.0897895175594864e-07
+    },
+    {
+      "name": "sts3215_elbow_pitch_1",
+      "cad_occurrence": "STS3215_elbow_pitch_1:1",
+      "mesh": {
+        "path": "meshes/component_10.stl",
+        "triangles": 7556,
+        "sha256": "06edc488995293ce62ec82e223c28204080c1c9413c87a8e5fe375e263ee3e22",
+        "units": "m"
+      },
+      "mass_kg": 0.05416487552553728,
+      "category": "servo",
+      "cad_volume_cm3": 36.21699148922387,
+      "mesh_to_link": [
+        [
+          1.0,
+          0.0,
+          -7.888609052210118e-31,
+          -4.85722573273506e-17
+        ],
+        [
+          0.0,
+          1.0,
+          1.2917597322994068e-29,
+          -5.551115123125783e-17
+        ],
+        [
+          1.5777218104420236e-30,
+          3.796393106376119e-30,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        7.565668434611654e-06,
+        1.1726570998729948e-05,
+        1.4000830271767957e-05
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 6.251607671636569e-05,
+      "mesh_vs_native_volume_relative_error": 7.487380145299039e-05,
+      "mesh_vs_native_com_error_m": 4.0897895176358994e-07
+    },
+    {
+      "name": "sts3215_wrist_pitch",
+      "cad_occurrence": "STS3215_wrist_pitch:1",
+      "mesh": {
+        "path": "meshes/component_11.stl",
+        "triangles": 7556,
+        "sha256": "4531e9bd8868f356f70f6df9d9b4274ec995193a94e3cbc87b47d254a1fe0ef6",
+        "units": "m"
+      },
+      "mass_kg": 0.05416487552553728,
+      "category": "servo",
+      "cad_volume_cm3": 36.21699148922387,
+      "mesh_to_link": [
+        [
+          1.0,
+          -2.7755575615628914e-17,
+          0.0,
+          -4.163336342344337e-17
+        ],
+        [
+          0.0,
+          0.9999999999999999,
+          -7.099748146989106e-30,
+          -5.551115123125783e-17
+        ],
+        [
+          1.5777218104420236e-30,
+          4.733165431326071e-30,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        7.565668434611654e-06,
+        1.1726570998729948e-05,
+        1.4000830271767953e-05
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 6.251607671447555e-05,
+      "mesh_vs_native_volume_relative_error": 7.487380145299039e-05,
+      "mesh_vs_native_com_error_m": 4.089789517626111e-07
+    },
+    {
+      "name": "sts3215_gripper",
+      "cad_occurrence": "STS3215_gripper:1",
+      "mesh": {
+        "path": "meshes/component_12.stl",
+        "triangles": 7556,
+        "sha256": "252f65fd5bc49e86b5e8dbce7b7f84f078a06a1a863d7e9e8197253c6fe935c7",
+        "units": "m"
+      },
+      "mass_kg": 0.05416487552553728,
+      "category": "servo",
+      "cad_volume_cm3": 36.21699148922387,
+      "mesh_to_link": [
+        [
+          1.0000000000000002,
+          -2.7755575615628914e-17,
+          -2.168404344971009e-18,
+          1.6653345369377348e-16
+        ],
+        [
+          5.551115123125783e-17,
+          1.0,
+          -1.734723475976807e-18,
+          -2.7755575615628914e-17
+        ],
+        [
+          0.0,
+          -1.734723475976807e-18,
+          0.9999999999999999,
+          6.938893903907228e-18
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        7.565668434611658e-06,
+        1.1726570998729945e-05,
+        1.4000830271767957e-05
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 6.251607671530752e-05,
+      "mesh_vs_native_volume_relative_error": 7.487380145299039e-05,
+      "mesh_vs_native_com_error_m": 4.089789517639182e-07
+    },
+    {
+      "name": "wrist_mount_link",
+      "cad_occurrence": "wrist_mount_link:1",
+      "mesh": {
+        "path": "meshes/component_13.stl",
+        "triangles": 4330,
+        "sha256": "0d322e59aae1718eb2b391a0696e1647d69502b38be1da4e7959a577e5ac4f90",
+        "units": "m"
+      },
+      "mass_kg": 0.008015034773787252,
+      "category": "printed",
+      "cad_volume_cm3": 13.825571663115936,
+      "mesh_to_link": [
+        [
+          1.0000000000000002,
+          0.0,
+          -8.67746995743113e-30,
+          5.551115123125783e-17
+        ],
+        [
+          -2.7755575615628914e-17,
+          1.0000000000000002,
+          -2.9187853493177437e-29,
+          0.0
+        ],
+        [
+          -1.5777218104420236e-30,
+          8.874685183736383e-30,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        1.9804181223513827e-06,
+        3.39129823757505e-06,
+        4.301387958809768e-06
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 0.00022191758665685243,
+      "mesh_vs_native_volume_relative_error": 0.0005386587618727567,
+      "mesh_vs_native_com_error_m": 9.935173005196504e-07
+    },
+    {
+      "name": "base_yaw_link",
+      "cad_occurrence": "base_yaw_link:1",
+      "mesh": {
+        "path": "meshes/component_14.stl",
+        "triangles": 9906,
+        "sha256": "28e6f14394e60cb36bd39448bf10c241e07300835e8260a143150e55a122b021",
+        "units": "m"
+      },
+      "mass_kg": 0.05938466872974349,
+      "category": "printed",
+      "cad_volume_cm3": 102.43586165073096,
+      "mesh_to_link": [
+        [
+          1.0,
+          -8.531775149089475e-33,
+          0.0,
+          0.008173952398612839
+        ],
+        [
+          -2.807917416491799e-32,
+          1.0,
+          0.0,
+          -0.5025645158681453
+        ],
+        [
+          0.0,
+          2.524354896707238e-29,
+          1.0,
+          -0.03950206478948442
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        2.6170310960670155e-05,
+        4.4124722070343906e-05,
+        4.764384775907778e-05
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 0.00012516610913017014,
+      "mesh_vs_native_volume_relative_error": 0.00014434953383724025,
+      "mesh_vs_native_com_error_m": 1.2119398463908326e-06
+    },
+    {
+      "name": "shoulder_link",
+      "cad_occurrence": "shoulder_link:1",
+      "mesh": {
+        "path": "meshes/component_15.stl",
+        "triangles": 4406,
+        "sha256": "b4ec7d219125117da72ea11de0083a7b8338fcf3cb8b8cb8e5077b535855e355",
+        "units": "m"
+      },
+      "mass_kg": 0.13845629838693357,
+      "category": "printed",
+      "cad_volume_cm3": 238.8308384910227,
+      "mesh_to_link": [
+        [
+          1.0,
+          7.888609052210118e-31,
+          2.055968734232262e-29,
+          -0.204884
+        ],
+        [
+          0.0,
+          1.0,
+          -1.3877787807814457e-17,
+          -0.08085025253169406
+        ],
+        [
+          -4.979684464207637e-30,
+          0.0,
+          0.9999999999999999,
+          -0.05757988365052026
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inertia_eigenvalues_kg_m2": [
+        0.00013719422795047709,
+        0.0007954659292103937,
+        0.0009229855018101034
+      ],
+      "native_inertia_offdiagonal_sign": 1,
+      "mesh_vs_native_inertia_relative_error": 0.0001237203295280879,
+      "mesh_vs_native_volume_relative_error": 0.0002909451392016926,
+      "mesh_vs_native_com_error_m": 2.8366949047820978e-05
+    }
+  ],
+  "joints": [
+    {
+      "name": "elbow_flex",
+      "cad_joint": "elbow_pitch",
+      "parent": "sts3215_elbow_pitch_1",
+      "child": "elbow_link",
+      "type": "revolute",
+      "cad_angle_at_urdf_zero_deg": 10.0,
+      "cad_to_urdf_sign": -1,
+      "cad_to_urdf_formula": "q_urdf_rad = sign * (q_cad_rad - zero_cad_rad)",
+      "limits_deg": [
+        -100.0,
+        100.0
+      ],
+      "axis": [
+        1.285234449626551e-14,
+        1.3541773235597012e-15,
+        1.0
+      ]
+    },
+    {
+      "name": "elbow_wrist_servo_connect",
+      "cad_joint": "elbow_wrist_servo_connect",
+      "parent": "elbow_link",
+      "child": "sts3215_wrist_pitch",
+      "type": "fixed"
+    },
+    {
+      "name": "wrist_flex",
+      "cad_joint": "wrist_pitch",
+      "parent": "sts3215_wrist_pitch",
+      "child": "wrist_link",
+      "type": "revolute",
+      "cad_angle_at_urdf_zero_deg": 0.0,
+      "cad_to_urdf_sign": -1,
+      "cad_to_urdf_formula": "q_urdf_rad = sign * (q_cad_rad - zero_cad_rad)",
+      "limits_deg": [
+        -110.0,
+        110.0
+      ],
+      "axis": [
+        -1.0,
+        -1.3877787800624356e-17,
+        -3.978805365336402e-19
+      ]
+    },
+    {
+      "name": "wrist_wrist_roll_connect",
+      "cad_joint": "wrist_wrist_roll_connect",
+      "parent": "wrist_link",
+      "child": "sts3215_wrist_roll",
+      "type": "fixed"
+    },
+    {
+      "name": "wrist_roll",
+      "cad_joint": "wrist_roll",
+      "parent": "sts3215_wrist_roll",
+      "child": "gripper_mount",
+      "type": "revolute",
+      "cad_angle_at_urdf_zero_deg": 92.78912989885248,
+      "cad_to_urdf_sign": -1,
+      "cad_to_urdf_formula": "q_urdf_rad = sign * (q_cad_rad - zero_cad_rad)",
+      "limits_deg": [
+        -180.0,
+        180.0
+      ],
+      "axis": [
+        -8.326672684688713e-17,
+        -1.8041124150158877e-15,
+        -1.0
+      ]
+    },
+    {
+      "name": "wrist_griper_mount_connect",
+      "cad_joint": "wrist_griper_mount_connect",
+      "parent": "gripper_mount",
+      "child": "sts3215_gripper",
+      "type": "fixed"
+    },
+    {
+      "name": "gripper",
+      "cad_joint": "gripper_moving",
+      "parent": "sts3215_gripper",
+      "child": "moving_gripper",
+      "type": "revolute",
+      "cad_angle_at_urdf_zero_deg": -12.000000000000002,
+      "cad_to_urdf_sign": 1,
+      "cad_to_urdf_formula": "q_urdf_rad = sign * (q_cad_rad - zero_cad_rad)",
+      "limits_deg": [
+        0.0,
+        102.0
+      ],
+      "axis": [
+        -1.0852863746579919e-16,
+        -2.284630817861459e-15,
+        1.0
+      ]
+    },
+    {
+      "name": "wrist_mount_connect",
+      "cad_joint": "wrist_mount_connect",
+      "parent": "elbow_link",
+      "child": "wrist_mount_link",
+      "type": "fixed"
+    },
+    {
+      "name": "base_link_mount_connect",
+      "cad_joint": "base_link_mount_connect",
+      "parent": "base_link",
+      "child": "sts3215_base_yaw",
+      "type": "fixed"
+    },
+    {
+      "name": "shoulder_pan",
+      "cad_joint": "base_yaw",
+      "parent": "sts3215_base_yaw",
+      "child": "base_yaw_link",
+      "type": "revolute",
+      "cad_angle_at_urdf_zero_deg": 0.0,
+      "cad_to_urdf_sign": 1,
+      "cad_to_urdf_formula": "q_urdf_rad = sign * (q_cad_rad - zero_cad_rad)",
+      "limits_deg": [
+        -110.0,
+        110.0
+      ],
+      "axis": [
+        -9.425634483285062e-17,
+        -1.0,
+        -5.679138147612474e-18
+      ]
+    },
+    {
+      "name": "base_yaw_link_servo_1_connect",
+      "cad_joint": "base_yaw_link_servo_1_connect",
+      "parent": "base_yaw_link",
+      "child": "sts3215_shoulder_pitch_1",
+      "type": "fixed"
+    },
+    {
+      "name": "base_yaw_link_servo_2_connect",
+      "cad_joint": "base_yaw_link_servo_2_connect",
+      "parent": "base_yaw_link",
+      "child": "sts3215_shoulder_pitch_2",
+      "type": "fixed"
+    },
+    {
+      "name": "shoulder_lift",
+      "cad_joint": "shoulder_pitch",
+      "parent": "sts3215_shoulder_pitch_2",
+      "child": "shoulder_link",
+      "type": "revolute",
+      "cad_angle_at_urdf_zero_deg": -5.0,
+      "cad_to_urdf_sign": 1,
+      "cad_to_urdf_formula": "q_urdf_rad = sign * (q_cad_rad - zero_cad_rad)",
+      "limits_deg": [
+        -105.00000000000001,
+        105.0
+      ],
+      "axis": [
+        -1.0,
+        -2.306148186396448e-15,
+        6.00075342683179e-16
+      ]
+    },
+    {
+      "name": "rigid_24",
+      "cad_joint": "Rigid 24",
+      "parent": "shoulder_link",
+      "child": "sts3215_elbow_pitch_2",
+      "type": "fixed"
+    },
+    {
+      "name": "rigid_25",
+      "cad_joint": "Rigid 25",
+      "parent": "shoulder_link",
+      "child": "sts3215_elbow_pitch_1",
+      "type": "fixed"
+    }
+  ],
+  "mass_total_kg": 0.885035480330341,
+  "nominal_direction_source": "SO new_calib pitch axes and wrist reference geometry; actual motor encoder directions have not been measured.",
+  "wrist_reference": "Match SO101 new_calib signed pitch-to-jaw angle, not its numerical origin rpy. The corresponding PingTi CAD wrist angle is derived from the copied mechanism.",
+  "fusion_reference_rounding": {
+    "actual_exported_roll_deg": 92.8,
+    "desired_roll_deg": 92.78912989885248,
+    "analytic_residual_rotation_deg": -0.010870101147520897,
+    "method": "Rigid rotation of the downstream subtree about the measured CAD wrist pivot and axis; no sample fitting."
+  },
+  "planning_limits": "velocity=1 rad/s; effort=3.35 Nm per servo or 6.70 for paired joints, using SO motor reference. Approximate model values, not verified PingTi limits or driver enforcement.",
+  "tool_mount": "Output-horn frame; not a calibrated gripper TCP.",
+  "collision_geometry": "Native CAD triangulations. Simulators may convexify individual meshes; no collision-free workspace or contact-task accuracy is certified.",
+  "hardware_validation": "Not performed; confirm signs, repeatable endpoints, wrist reference and TCP before real-world Cartesian operation."
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "pingti-new-calib-conventions/1",
+  "recorded_on": "2026-10-19",
+  "purpose": "Design conventions for a future PingTi new_calib URDF; this file is not an exported robot model or hardware calibration.",
+  "source_cad": "fusion/PingTi_Arm_5DOF_v4.f3d",
+  "source_audit": "Simulation/validation/urdf_audit_20261019/comparison.json",
+  "arm_joint_units": "degrees in LeRobot with use_degrees=true; radians in URDF",
+  "bounded_arm_joints": {
+    "zero_rule": "Midpoint of the physical travel recorded during LeRobot calibration. CAD travel is the initial nominal model and must correspond to the same physical endpoints.",
+    "cad_nominal_angles_deg": {
+      "shoulder_pan": {
+        "cad_joint": "base_yaw",
+        "lower": -110,
+        "upper": 110,
+        "midpoint": 0
+      },
+      "shoulder_lift": {
+        "cad_joint": "shoulder_pitch",
+        "lower": -110,
+        "upper": 100,
+        "midpoint": -5
+      },
+      "elbow_flex": {
+        "cad_joint": "elbow_pitch",
+        "lower": -90,
+        "upper": 110,
+        "midpoint": 10
+      },
+      "wrist_flex": {
+        "cad_joint": "wrist_pitch",
+        "lower": -110,
+        "upper": 110,
+        "midpoint": 0
+      }
+    }
+  },
+  "wrist_roll": {
+    "reference_authority": "User confirmation: the wrist mechanism was copied from SO ARM and uses the same calibration procedure and physical reference pose.",
+    "zero_rule": "Use the same physical reference pose as SO ARM when pressing Enter during calibration, and represent that pose as nominal wrist_roll q=0 in the new URDF.",
+    "lerobot_calibration_range_raw": [0, 4095],
+    "homed_position_raw": 2047,
+    "normalization_midpoint_raw": 2047.5,
+    "quantization_note": "The Enter pose is nominally zero; the 2047 versus 2047.5 convention produces a sub-tick angular difference.",
+    "transform_requirement": "Align the CAD and URDF frames to the SO ARM physical reference pose. Identical geometry does not mean identical numerical CAD joint angles or origin rpy values.",
+    "old_cad_to_urdf_offset_is_motor_calibration": false
+  },
+  "joint_directions": "Match each LeRobot primary motor's positive direction; encode the convention in the new URDF axes and reference transforms.",
+  "paired_motors": "Shoulder and elbow each remain one mechanical joint in the model; the bridge drives the secondary servo with the mirrored command.",
+  "gripper": {
+    "lerobot_range": [0, 100],
+    "mapping_requirement": "Convert the calibrated opening command to the actual modeled jaw joint angle separately. It is not an arm-joint midpoint convention."
+  },
+  "mass_assumptions": {
+    "authority": "User-specified initial modeling assumptions, not measured PingTi properties.",
+    "printed_material_and_effective_density": "Same as the chosen SO ARM reference; calculate PingTi part mass from its own geometry.",
+    "servo_mass": "Same as the chosen SO ARM servo reference, including the STS3250 units as an explicit initial approximation.",
+    "center_of_mass_and_inertia": "Recompute from the PingTi geometry, assigned masses, and component placement; do not copy entire SO ARM link inertial properties.",
+    "existing_all_steel_cad_properties_are_valid": false
+  }
+}
