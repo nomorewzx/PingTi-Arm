@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="pingti_arm_v4_new_calib">
-  <!--PingTi v4 kinematic chain in SI units, with user-selected geometry overrides recorded in geometry_overrides.json. Original v3 URDF is preserved.-->
+  <!--PingTi v4 in SI units with the full-length strengthened elbow link and nominal new_calib joint conventions.-->
   <mujoco>
     <compiler meshdir="meshes" discardvisual="false" fusestatic="false" />
   </mujoco>

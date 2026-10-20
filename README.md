@@ -25,7 +25,7 @@
 - [Assembly tutorial](./docs/Assembe_tutorial.md)
 - [Example of run teleoperation and other tasks via `pingti_lerobot_bridge`](https://github.com/nomorewzx/pingti_lerobot_bridge)
 - **(TODO)**: PingTi Arm on [LeKiwi base](https://github.com/SIGRobotics-UIUC/LeKiwi)
-- **(TODO)**: [URDF for Simulation](./docs/URDF_SIM.md)
+- [URDF for Simulation](./docs/URDF_SIM.md)
 
 ![The Right View of PingTi Arm](./drawings/PingTi_Arm_RightView_V1_20250218.jpg)
 

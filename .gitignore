@@ -2,13 +2,13 @@
 **/__pycache__/
 **/.vscode/
 
-# Local CAD backups and superseded assembly experiments.
+# Local CAD backups and one-off assembly/export records.
 /fusion/archive/
-/Simulation/validation/fusion_assembly_20261020/
-/Simulation/validation/strong_elbow_audit_20261019/
+/Simulation/validation/
 
-# Rebuildable packages and duplicate baseline/source snapshots.
+# Generated model packages and intermediate export data.
 /Simulation/PingTi_Arm_v4_new_calib.zip
-/Simulation/PingTi_Arm_v4_new_calib/provenance/baseline_491f3da.urdf
-/Simulation/PingTi_Arm_v4_new_calib/provenance/geometry_sources/
+/Simulation/PingTi_Arm_v4_new_calib/provenance/
+/Simulation/PingTi_Arm_v4_new_calib/*_validation.json
+/Simulation/PingTi_Arm_v4_new_calib/validation*
 /stl_3d_printing/strong_elbow_link.stl

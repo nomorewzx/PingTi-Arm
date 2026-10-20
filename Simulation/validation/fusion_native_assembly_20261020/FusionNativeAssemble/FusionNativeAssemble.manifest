@@ -1,8 +1,0 @@
-{
-  "autodeskProduct": "Fusion360",
-  "type": "script",
-  "author": "Codex",
-  "description": {"": "Reassemble using the locally archived native elbow_link Body1 from shoulder_to_elbow_link v2. Keep original CAD angles and limits; validate 72 poses before and after local F3D export. Never overwrite the source or save cloud files."},
-  "supportedOS": "mac|windows",
-  "editEnabled": true
-}

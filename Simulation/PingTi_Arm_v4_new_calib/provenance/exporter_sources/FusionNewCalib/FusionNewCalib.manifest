@@ -1,8 +1,0 @@
-{
-  "autodeskProduct": "Fusion360",
-  "type": "script",
-  "author": "Codex",
-  "description": {"": "Export PingTi v4 native meshes, physical properties and independent CAD poses for a new_calib URDF. Imports a separate unsaved document; does not save or edit source files."},
-  "supportedOS": "mac|windows",
-  "editEnabled": true
-}

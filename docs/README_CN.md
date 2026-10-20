@@ -20,7 +20,7 @@ PingTi 机械臂基于 [SO-100 机械臂](https://github.com/TheRobotStudio/SO-A
 - [3D打印](./3d_print.md)
 - [组装教程](./Assemble_tutorial_CN.md)
 - 运行遥操作
-- [用于仿真的 URDF 文件](./docs/URDF_SIM.md)
+- [用于仿真的 URDF 文件](./URDF_SIM.md)
 
 ![PingTi 机械臂的右侧视图](../drawings/PingTi_Arm_RightView_V1_20250218.jpg)
 

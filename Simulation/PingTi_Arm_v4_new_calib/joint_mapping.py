@@ -17,8 +17,8 @@ def lerobot_to_urdf(values):
 
     Accepts either `shoulder_pan` or `shoulder_pan.pos` keys. Secondary motor
     readings are deliberately unused: paired servos are one mechanical joint.
-    The gripper mapping assumes the CAD endpoint convention documented in the
-    model manifest; it is not an empirical finger-width calibration.
+    The gripper mapping assumes the nominal 0..102 degree CAD travel; it is
+    not an empirical finger-width calibration.
     """
     def value(name):
         v = float(values[name] if name in values else values[name + ".pos"])

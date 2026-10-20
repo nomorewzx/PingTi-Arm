@@ -1,8 +1,0 @@
-{
-  "autodeskProduct": "Fusion360",
-  "type": "script",
-  "author": "Codex",
-  "description": {"": "PingTi CAD audit: export joints and properties, temporarily drive joints and restore the pose. No geometry edits or document saves."},
-  "supportedOS": "mac|windows",
-  "editEnabled": true
-}
