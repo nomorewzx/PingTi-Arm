@@ -15,6 +15,8 @@ import subprocess
 import warnings
 import xml.etree.ElementTree as ET
 
+from source_artifacts import baseline_f3d_bytes, baseline_urdf_bytes, git_blob
+
 import numpy as np
 from scipy.spatial.transform import Rotation
 
@@ -77,7 +79,7 @@ def origin(element):
 
 
 def triangles(path):
-    b = path.read_bytes()
+    b = path if isinstance(path, bytes) else path.read_bytes()
     n = struct.unpack_from("<I", b, 80)[0]
     if len(b) != 84 + 50*n:
         raise ValueError("Not a binary STL: " + str(path))
@@ -103,6 +105,41 @@ def mesh_properties(path):
     return {"volume_m3": float(volume), "center_m": center,
             "inertia_density_one": inertia_density_one,
             "bbox_m": np.array([vertices.min(axis=0), vertices.max(axis=0)])}
+
+
+def prepare_overrides():
+    """Convert user-selected STL geometry to meters without changing frames."""
+    config_path = OUT / "geometry_overrides.json"
+    if not config_path.exists():
+        return {}, None
+    config = json.loads(config_path.read_text())
+    result = {}
+    for occurrence, selection in config["overrides"].items():
+        source = REPO / selection["source_path"]
+        assert sha(source) == selection["source_sha256"], "Selected STL changed: " + str(source)
+        assert selection["source_units"] == "mm"
+        data = source.read_bytes()
+        count = struct.unpack_from("<I", data, 80)[0]
+        assert len(data) == 84 + 50*count
+        dtype = np.dtype([("n", "<f4", (3,)), ("v", "<f4", (3, 3)), ("a", "<u2")])
+        records = np.frombuffer(data, dtype=dtype, count=count, offset=84).copy()
+        records["v"] *= .001
+        target = OUT / selection["output_mesh"]
+        target.write_bytes(b"PingTi strengthened elbow; SI meters; native component frame".ljust(80, b" ")+struct.pack("<I", count)+records.tobytes())
+        tri = triangles(target)
+        _, ids = np.unique(tri.reshape(-1, 3), axis=0, return_inverse=True)
+        faces = ids.reshape(-1, 3)
+        edges = np.concatenate([faces[:, [0, 1]], faces[:, [1, 2]], faces[:, [2, 0]]])
+        _, inverse, multiplicity = np.unique(np.sort(edges, axis=1), axis=0, return_inverse=True, return_counts=True)
+        winding = np.bincount(inverse, weights=np.where(edges[:, 0] < edges[:, 1], 1., -1.))
+        areas = np.linalg.norm(np.cross(tri[:, 1]-tri[:, 0], tri[:, 2]-tri[:, 0]), axis=1)/2
+        assert (multiplicity == 2).all() and (winding == 0).all(), "Replacement mesh is not a consistently wound closed surface"
+        assert (areas > 1e-18).all(), "Replacement mesh contains degenerate triangles"
+        result[occurrence] = {
+            "selection": selection,
+            "mesh": {"path": selection["output_mesh"], "triangles": count, "sha256": sha(target), "units": "m"},
+            "topology": {"watertight": True, "consistent_winding": True, "degenerate_triangles": 0}}
+    return result, config
 
 
 def fk(root, positions=None):
@@ -183,9 +220,10 @@ def so_reference():
 
 def build():
     assert sha(OLD_URDF) == OLD_SHA256, "Original URDF changed since the audit"
-    assert sha(REPO / "fusion/PingTi_Arm_5DOF_v4.f3d") == SOURCE_SHA256
+    assert hashlib.sha256(baseline_f3d_bytes()).hexdigest() == SOURCE_SHA256
     data = json.loads((RAW / "fusion_export.json").read_text())
     assert data["source_sha256"] == SOURCE_SHA256
+    overrides, override_config = prepare_overrides()
     reference, wrist_angle = so_reference()
     zero_pose = next(p for p in data["poses"] if p["label"] == "so101_new_calib_wrist_reference")
     expected_roll_deg = 270. - math.degrees(wrist_angle)
@@ -243,7 +281,7 @@ def build():
             frame[:3, 3] = anchors_zero[joint["name"]]
         frames[path] = frame
     root = ET.Element("robot", {"name": "pingti_arm_v4_new_calib"})
-    root.append(ET.Comment("Derived from the local PingTi v4 F3D in SI units. See provenance and validation_report.html. Original v3 URDF is preserved."))
+    root.append(ET.Comment("PingTi v4 kinematic chain in SI units, with user-selected geometry overrides recorded in geometry_overrides.json. Original v3 URDF is preserved."))
     mujoco = ET.SubElement(root, "mujoco")
     ET.SubElement(mujoco, "compiler", {"meshdir": "meshes", "discardvisual": "false", "fusestatic": "false"})
     for name, color in [("printed", "0.88 0.67 0.19 1"), ("servo", "0.16 0.18 0.21 1")]:
@@ -252,25 +290,42 @@ def build():
     for path, occurrence in occurrences.items():
         name = link_names[path]
         link = ET.SubElement(root, "link", {"name": name})
-        mesh_path = OUT / occurrence["mesh"]["path"]
+        replacement = overrides.get(path)
+        mesh_metadata = replacement["mesh"] if replacement else occurrence["mesh"]
+        mesh_path = OUT / mesh_metadata["path"]
         prop = occurrence["native_component_properties"]
         mesh = mesh_properties(mesh_path)
-        center = np.array(prop["center_of_mass_m"])
-        old_mass = prop["mass_kg"]
-        values = np.array(prop["inertia_world_kg_cm2_success_xx_yy_zz_xy_yz_xz"][1:])*1e-4
-        xx, yy, zz, xy, yz, xz = values
-        candidates = []
-        for offdiag_sign in (1, -1):
-            inertia_origin = np.array([[xx, offdiag_sign*xy, offdiag_sign*xz], [offdiag_sign*xy, yy, offdiag_sign*yz], [offdiag_sign*xz, offdiag_sign*yz, zz]])
-            inertia_com = inertia_origin - old_mass*(np.dot(center, center)*np.eye(3)-np.outer(center, center))
-            mesh_inertia = mesh["inertia_density_one"]*old_mass/mesh["volume_m3"]
-            error = np.linalg.norm(inertia_com-mesh_inertia)/np.linalg.norm(mesh_inertia)
-            candidates.append((error, offdiag_sign, inertia_com))
-        inertia_error, offdiag_sign, inertia_com = min(candidates, key=lambda item: item[0])
-        assert inertia_error < 0.025, (path, "native inertia mismatch", inertia_error)
-        assert np.linalg.norm(center-mesh["center_m"]) < 0.0001, (path, "component mesh frame mismatch")
         servo = occurrence["component_name"].startswith("STS")
-        mass = reference["servo_mass_kg"] if servo else prop["volume_cm3"]*1e-6*reference["effective_print_density_kg_m3"]
+        if replacement:
+            assert not servo and name == replacement["selection"]["link_name"]
+            # Check the component coordinate envelope, not just its overall size.
+            baseline_mesh = str((OUT/occurrence["mesh"]["path"]).relative_to(REPO))
+            native_mesh = mesh_properties(git_blob(baseline_mesh, occurrence["mesh"]["sha256"]))
+            assert np.max(np.abs(mesh["bbox_m"]-native_mesh["bbox_m"])) < 5e-5
+            center = mesh["center_m"]
+            # Reference inertia at uniform density 1 kg/m^3; scale below by rho.
+            old_mass = mesh["volume_m3"]
+            inertia_com = mesh["inertia_density_one"]
+            mass = mesh["volume_m3"]*reference["effective_print_density_kg_m3"]
+            inertia_error = offdiag_sign = volume_error = com_error = None
+        else:
+            center = np.array(prop["center_of_mass_m"])
+            old_mass = prop["mass_kg"]
+            values = np.array(prop["inertia_world_kg_cm2_success_xx_yy_zz_xy_yz_xz"][1:])*1e-4
+            xx, yy, zz, xy, yz, xz = values
+            candidates = []
+            for offdiag_sign in (1, -1):
+                inertia_origin = np.array([[xx, offdiag_sign*xy, offdiag_sign*xz], [offdiag_sign*xy, yy, offdiag_sign*yz], [offdiag_sign*xz, offdiag_sign*yz, zz]])
+                inertia_com = inertia_origin - old_mass*(np.dot(center, center)*np.eye(3)-np.outer(center, center))
+                mesh_inertia = mesh["inertia_density_one"]*old_mass/mesh["volume_m3"]
+                error = np.linalg.norm(inertia_com-mesh_inertia)/np.linalg.norm(mesh_inertia)
+                candidates.append((error, offdiag_sign, inertia_com))
+            inertia_error, offdiag_sign, inertia_com = min(candidates, key=lambda item: item[0])
+            assert inertia_error < 0.025, (path, "native inertia mismatch", inertia_error)
+            com_error = float(np.linalg.norm(center-mesh["center_m"]))
+            assert com_error < 0.0001, (path, "component mesh frame mismatch")
+            volume_error = abs(mesh["volume_m3"]/(prop["volume_cm3"]*1e-6)-1)
+            mass = reference["servo_mass_kg"] if servo else prop["volume_cm3"]*1e-6*reference["effective_print_density_kg_m3"]
         scale = mass/old_mass
         mesh_to_link = np.linalg.inv(frames[path]) @ cad_occ_zero[path]
         center_link = (mesh_to_link @ np.r_[center, 1.])[:3]
@@ -286,17 +341,21 @@ def build():
         for kind in ("visual", "collision"):
             part = ET.SubElement(link, kind, {"name": name + "_" + kind})
             ET.SubElement(part, "origin", xyzrpy(mesh_to_link))
-            ET.SubElement(ET.SubElement(part, "geometry"), "mesh", {"filename": occurrence["mesh"]["path"], "scale": "1 1 1"})
+            ET.SubElement(ET.SubElement(part, "geometry"), "mesh", {"filename": mesh_metadata["path"], "scale": "1 1 1"})
             if kind == "visual":
                 ET.SubElement(part, "material", {"name": "servo" if servo else "printed"})
-        manifest_links.append({"name": name, "cad_occurrence": path, "mesh": occurrence["mesh"],
+        manifest_links.append({"name": name, "cad_occurrence": path, "mesh": mesh_metadata,
                                "mass_kg": mass, "category": "servo" if servo else "printed",
-                               "cad_volume_cm3": prop["volume_cm3"], "mesh_to_link": mesh_to_link.tolist(),
+                               "cad_volume_cm3": None if replacement else prop["volume_cm3"],
+                               "mesh_volume_cm3": mesh["volume_m3"]*1e6,
+                               "mass_property_source": "STL closed-surface volume integrals at SO effective density" if replacement else "Native Fusion component properties, rescaled to assigned mass",
+                               "geometry_override": replacement,
+                               "mesh_to_link": mesh_to_link.tolist(),
                                "inertia_eigenvalues_kg_m2": eig.tolist(),
                                "native_inertia_offdiagonal_sign": offdiag_sign,
-                               "mesh_vs_native_inertia_relative_error": float(inertia_error),
-                               "mesh_vs_native_volume_relative_error": abs(mesh["volume_m3"]/(prop["volume_cm3"]*1e-6)-1),
-                               "mesh_vs_native_com_error_m": float(np.linalg.norm(center-mesh["center_m"]))})
+                               "mesh_vs_native_inertia_relative_error": float(inertia_error) if inertia_error is not None else None,
+                               "mesh_vs_native_volume_relative_error": volume_error,
+                               "mesh_vs_native_com_error_m": com_error})
     manifest_joints = []
     for source_joint in source_joints:
         old_name = source_joint["name"]
@@ -343,17 +402,34 @@ def build():
     ET.indent(root, space="  ")
     ET.ElementTree(root).write(URDF, encoding="utf-8", xml_declaration=True)
     manifest = {"schema": "pingti-new-calib-model/1", "urdf": URDF.name, "urdf_sha256": sha(URDF),
-                "source_f3d_sha256": SOURCE_SHA256, "original_urdf_sha256": OLD_SHA256,
+                "source_f3d_sha256": SOURCE_SHA256, "source_f3d_path": "fusion/PingTi_Arm_5DOF_v4.f3d",
+                "source_f3d_commit": override_config["baseline_commit"],
+                "original_urdf_sha256": OLD_SHA256,
                 "fusion_version": data["fusion_version"], "cad_from_base": cad_from_base.tolist(),
                 "reference": reference, "links": manifest_links, "joints": manifest_joints,
+                "geometry_overrides": override_config,
                 "mass_total_kg": sum(l["mass_kg"] for l in manifest_links),
                 "nominal_direction_source": "SO new_calib pitch axes and wrist reference geometry; actual motor encoder directions have not been measured.",
                 "wrist_reference": "Match SO101 new_calib signed pitch-to-jaw angle, not its numerical origin rpy. The corresponding PingTi CAD wrist angle is derived from the copied mechanism.",
                 "fusion_reference_rounding": {"actual_exported_roll_deg": math.degrees(actual_roll_zero), "desired_roll_deg": expected_roll_deg, "analytic_residual_rotation_deg": math.degrees(residual), "method": "Rigid rotation of the downstream subtree about the measured CAD wrist pivot and axis; no sample fitting."},
                 "planning_limits": "velocity=1 rad/s; effort=3.35 Nm per servo or 6.70 for paired joints, using SO motor reference. Approximate model values, not verified PingTi limits or driver enforcement.",
                 "tool_mount": "Output-horn frame; not a calibrated gripper TCP.",
-                "collision_geometry": "Native CAD triangulations. Simulators may convexify individual meshes; no collision-free workspace or contact-task accuracy is certified.",
+                "collision_geometry": "Native CAD triangulations plus the selected full-length strengthened elbow STL. Simulators may convexify individual meshes; unchanged hard stops or collision-free workspace are not certified by the FK tests.",
                 "hardware_validation": "Not performed; confirm signs, repeatable endpoints, wrist reference and TCP before real-world Cartesian operation."}
+    assembly_path = REPO / "fusion/assembly_manifest.json"
+    if assembly_path.exists():
+        assembly = json.loads(assembly_path.read_text())
+        assert assembly["status"] == "passed"
+        assert sha(REPO/assembly["f3d"]) == assembly["f3d_sha256"]
+        assert sha(REPO/assembly["validation_report"]) == assembly["validation_sha256"]
+        assert assembly.get("reference_stl_sha256", assembly["replacement_sha256"]) == override_config["overrides"]["elbow_link:1"]["source_sha256"]
+        if "reference_stl_sha256" in assembly:
+            assert sha(REPO/assembly["replacement_source"]) == assembly["replacement_sha256"]
+            assert sha(REPO/assembly["geometry_match_report"]) == assembly["geometry_match_sha256"]
+            shutil.copy2(REPO/assembly["geometry_match_report"], RAW/"native_geometry_match.json")
+        shutil.copy2(assembly_path, RAW/"assembly_manifest.json")
+        shutil.copy2(REPO/assembly["validation_report"], RAW/"fusion_assembly_validation.json")
+        manifest["assembled_f3d"] = assembly
     dump(OUT / "model_manifest.json", manifest)
     return manifest, data
 
@@ -397,16 +473,29 @@ def validate(manifest, data):
     restore_error = max(np.max(np.abs(transform(data["baseline"]["occurrences"][p])-transform(data["restored"]["occurrences"][p]))) for p in data["baseline"]["occurrences"])
     assert restore_error < 1e-9
     assert sha(OLD_URDF) == OLD_SHA256
-    assert sha(REPO / "fusion/PingTi_Arm_5DOF_v4.f3d") == SOURCE_SHA256
+    assert hashlib.sha256(baseline_f3d_bytes()).hexdigest() == SOURCE_SHA256
+    baseline = ET.fromstring(baseline_urdf_bytes(manifest["geometry_overrides"]))
+    assert [ET.tostring(j) for j in root.findall("joint")] == [ET.tostring(j) for j in baseline.findall("joint")], "Joint definitions changed"
+    old_links = {l.get("name"): l for l in baseline.findall("link")}
+    for link in root.findall("link"):
+        if link.get("name") != "elbow_link":
+            assert ET.tostring(link) == ET.tostring(old_links[link.get("name")]), "Unrelated link changed"
+    replacement_links = [l for l in manifest["links"] if l["geometry_override"]]
+    assert [l["name"] for l in replacement_links] == ["elbow_link"]
+    native_links = [l for l in manifest["links"] if not l["geometry_override"]]
     result = {"schema": "pingti-new-calib-validation/1", "status": "passed",
-              "scope": "CAD geometry, nominal coordinate conventions, mesh properties, and inertial consistency; not physical encoder or contact-task validation.",
+              "scope": "Original Fusion kinematic chain, unchanged baseline joints, selected replacement STL, and inertial consistency; not physical endpoint, encoder or contact-task validation.",
               "physical_links": len(manifest["links"]), "moving_joints": len(moving),
               "independent_fusion_poses": len(errors), "max_fk_point_error_mm": worst_point,
               "max_fk_orientation_error_deg": worst_angle,
               "so_wrist_reference_angle_deg": angle,
               "all_inertias_positive_definite_and_triangle_inequality": True,
-              "max_native_mesh_volume_relative_error": max(l["mesh_vs_native_volume_relative_error"] for l in manifest["links"]),
-              "max_native_mesh_com_error_mm": 1000*max(l["mesh_vs_native_com_error_m"] for l in manifest["links"]),
+              "native_component_meshes_compared": len(native_links),
+              "max_native_mesh_volume_relative_error": max(l["mesh_vs_native_volume_relative_error"] for l in native_links),
+              "max_native_mesh_com_error_mm": 1000*max(l["mesh_vs_native_com_error_m"] for l in native_links),
+              "baseline_joint_definitions_unchanged": True,
+              "unrelated_link_definitions_unchanged": True,
+              "replacement_mesh_topology": replacement_links[0]["geometry_override"]["topology"],
               "mass_total_kg": manifest["mass_total_kg"],
               "temporary_cad_pose_restored_max_transform_difference": float(restore_error),
               "source_f3d_preserved": True, "original_urdf_preserved": True,

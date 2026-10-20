@@ -5,6 +5,8 @@
 
 You can find STL files for the 3D-printed parts in dir `../stl_3d_printing/`. I printed the parts on [Bambu Lab A1 Printer](https://www.amazon.com/Multi-Color-Precision-Full-Auto-Calibration-Compensation/dp/B0D17V4SKM?th=1) using [Bambu Lab PETG](https://www.matterhackers.com/store/l/bambu-lab-petg-basic-filament-175mm-1kg/sk/MW6ED56H) filament
 
+[`elbow_link.stl`](../stl_3d_printing/elbow_link.stl) is the strengthened, full-length elbow-to-wrist link used in the current Fusion assembly and README render. Its original length and end mounting interfaces are retained.
+
 The printer settings are:
 - Layer height: 0.2mm
 - Initial layer height: 0.2mm

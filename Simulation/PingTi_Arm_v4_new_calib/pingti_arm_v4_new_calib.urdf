@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="pingti_arm_v4_new_calib">
-  <!--Derived from the local PingTi v4 F3D in SI units. See provenance and validation_report.html. Original v3 URDF is preserved.-->
+  <!--PingTi v4 kinematic chain in SI units, with user-selected geometry overrides recorded in geometry_overrides.json. Original v3 URDF is preserved.-->
   <mujoco>
     <compiler meshdir="meshes" discardvisual="false" fusestatic="false" />
   </mujoco>
@@ -12,9 +12,9 @@
   </material>
   <link name="elbow_link">
     <inertial>
-      <origin xyz="-0.1287219641401 -0.00070982329751493 -0.032281499374845" rpy="0 0 0" />
-      <mass value="0.09775001089453" />
-      <inertia ixx="6.4297788584354e-05" iyy="0.00077334726821617" izz="0.00071603448500571" ixy="-3.4633057824742e-06" ixz="-3.5037762755018e-05" iyz="-1.5879082469137e-07" />
+      <origin xyz="-0.12740073563106 -4.3847829204705e-05 -0.035113208934521" rpy="0 0 0" />
+      <mass value="0.2008101791911" />
+      <inertia ixx="0.00014082551194126" iyy="0.0010264998197145" izz="0.00090383312376324" ixy="-3.4175854708387e-06" ixz="-4.0002365669934e-05" iyz="-2.9869433606192e-07" />
     </inertial>
     <visual name="elbow_link_visual">
       <origin xyz="-0.35484990733661 0.032 -0.0182" rpy="-4.5359502050208e-30 0 1.3877787807814e-17" />

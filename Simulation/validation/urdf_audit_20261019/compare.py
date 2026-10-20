@@ -5,6 +5,7 @@ Requires NumPy and SciPy. Only writes audit results next to this script.
 """
 
 import hashlib
+import importlib.util
 import html
 import json
 from pathlib import Path
@@ -19,7 +20,14 @@ from scipy.spatial.transform import Rotation
 OUT = Path(__file__).resolve().parent
 REPO = OUT.parents[2]
 URDF = REPO / "Simulation/PingTi_Arm_v3/urdf/PingTi_Arm_v3.urdf"
-CAD = REPO / "fusion/PingTi_Arm_5DOF_v4.f3d"
+CAD = REPO / "fusion/archive/PingTi_Arm_5DOF_v4_original.f3d"
+
+
+def baseline_source():
+    spec = importlib.util.spec_from_file_location("pingti_git_sources", REPO / "Simulation/PingTi_Arm_v4_new_calib/source_artifacts.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.ensure_baseline_f3d()
 
 
 def vector(text):
@@ -56,6 +64,7 @@ def stl_vertices(path):
 
 
 def analyze():
+    baseline_source()
     snapshot = json.loads((OUT / "fusion_snapshot.json").read_text())
     poses = json.loads((OUT / "fusion_pose_samples.json").read_text())
     root = ET.parse(URDF).getroot()

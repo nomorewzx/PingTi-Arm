@@ -6,7 +6,7 @@
 
 **PingTi Arm** is an open-source robotic arm designed based on the [SO-100 arm](https://github.com/TheRobotStudio/SO-ARM100) and is compatible with [Lerobot](https://github.com/huggingface/lerobot). The name "PingTi" comes from the Chinese pinyin "平替" (píng tì), which means "affordable substitute"
 
-![PingTi Arm](./media/pingti_arm_demo.jpg)
+![PingTi Arm 3D render with the strengthened elbow-to-wrist link](./media/pingti_arm_render.png)
 
 ## Features 
 - **Human arm scale**: 600mm arm span (excluding the end effector).

@@ -1,7 +1,7 @@
 {
   "schema": "pingti-new-calib-validation/1",
   "status": "passed",
-  "scope": "CAD geometry, nominal coordinate conventions, mesh properties, and inertial consistency; not physical encoder or contact-task validation.",
+  "scope": "Original Fusion kinematic chain, unchanged baseline joints, selected replacement STL, and inertial consistency; not physical endpoint, encoder or contact-task validation.",
   "physical_links": 16,
   "moving_joints": 6,
   "independent_fusion_poses": 72,
@@ -9,9 +9,17 @@
   "max_fk_orientation_error_deg": 1.6507959727033844e-11,
   "so_wrist_reference_angle_deg": 177.21087010114647,
   "all_inertias_positive_definite_and_triangle_inequality": true,
-  "max_native_mesh_volume_relative_error": 0.0008135954273035262,
+  "native_component_meshes_compared": 15,
+  "max_native_mesh_volume_relative_error": 0.0005386587618727567,
   "max_native_mesh_com_error_mm": 0.02836694904782098,
-  "mass_total_kg": 0.885035480330341,
+  "baseline_joint_definitions_unchanged": true,
+  "unrelated_link_definitions_unchanged": true,
+  "replacement_mesh_topology": {
+    "watertight": true,
+    "consistent_winding": true,
+    "degenerate_triangles": 0
+  },
+  "mass_total_kg": 0.9880956486269078,
   "temporary_cad_pose_restored_max_transform_difference": 1.5534490590965595e-13,
   "source_f3d_preserved": true,
   "original_urdf_preserved": true,

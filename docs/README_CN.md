@@ -3,7 +3,7 @@
 ## 什么是 PingTi Arm？🤔
 PingTi 机械臂基于 [SO-100 机械臂](https://github.com/TheRobotStudio/SO-ARM100) 设计，并与 [Lerobot](https://github.com/huggingface/lerobot) 兼容。PingTi, 即“平替”的拼音。
 
-![PingTi Arm](../media/pingti_arm_demo.jpg)
+![PingTi 机械臂 3D 渲染图，采用加强版肘到腕连杆](../media/pingti_arm_render.png)
 
 ## Features
 - **人类臂长尺寸**：臂展为 660mm（不包括末端执行器）。

@@ -4,11 +4,11 @@
   "version": "3.2.5",
   "urdf_import": true,
   "dof": 6,
-  "physical_mass_kg": 0.8850354803303333,
+  "physical_mass_kg": 0.9880956486269034,
   "fusion_poses_checked": 72,
   "max_component_origin_error_mm": 7.54099132792652e-11,
   "max_component_rotation_error_deg": 1.6496024978950587e-11,
-  "minimum_generalized_mass_matrix_eigenvalue": 1.275642432265411e-05,
+  "minimum_generalized_mass_matrix_eigenvalue": 1.2814360483975987e-05,
   "unit_mapping_roundtrips": 9,
   "scope": "Independent importer/FK and inertial mass matrices. No actuator tuning, collision-free planning, contact-task rollout or hardware validation."
 }

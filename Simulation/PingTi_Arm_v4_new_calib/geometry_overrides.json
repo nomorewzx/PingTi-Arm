@@ -1,0 +1,17 @@
+{
+  "schema": "pingti-geometry-overrides/1",
+  "baseline_commit": "491f3da",
+  "baseline_urdf_path": "Simulation/PingTi_Arm_v4_new_calib/pingti_arm_v4_new_calib.urdf",
+  "baseline_urdf_sha256": "35d904e6c0b0774bfb19fb74cd33eb0403390b84148af8f7f20112737fee2d99",
+  "overrides": {
+    "elbow_link:1": {
+      "link_name": "elbow_link",
+      "source_path": "stl_3d_printing/elbow_link.stl",
+      "source_units": "mm",
+      "source_sha256": "657d46991fd8fa4cb5acb3c49868b154eecef5a67a66eea08b72f84aca0a548d",
+      "output_mesh": "meshes/component_00.stl",
+      "selection": "User confirmed the full-length strengthened elbow-to-wrist STL. The shorter elbow_link object in the active Fusion v3 document is not used.",
+      "coordinate_convention": "The source STL uses the original elbow component's native coordinates in millimeters. Preserve the component-to-link transform and all joints."
+    }
+  }
+}

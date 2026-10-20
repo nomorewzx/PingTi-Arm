@@ -18,7 +18,7 @@ AUDIT_DIR = HERE.parent
 REPO = AUDIT_DIR.parents[2]
 OUT = REPO / "Simulation/PingTi_Arm_v4_new_calib"
 RAW = OUT / "provenance"
-SOURCE = REPO / "fusion/PingTi_Arm_5DOF_v4.f3d"
+SOURCE = REPO / "fusion/archive/PingTi_Arm_5DOF_v4_original.f3d"
 
 
 def write_json(path, data):
@@ -68,6 +68,7 @@ def run(context):
         spec = importlib.util.spec_from_file_location("pingti_fusion_audit", AUDIT_DIR / "FusionAudit/FusionAudit.py")
         audit = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(audit)
+        audit.baseline_source()
         document = app.importManager.importToNewDocument(app.importManager.createFusionArchiveImportOptions(str(SOURCE)))
         if document is None:
             raise RuntimeError("Could not import source F3D into a separate document")

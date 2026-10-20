@@ -5,6 +5,7 @@ Exports metadata, then temporarily drives joints and restores the saved pose.
 
 import datetime
 import hashlib
+import importlib.util
 import json
 import math
 import random
@@ -16,7 +17,15 @@ import adsk.fusion
 
 
 OUT = Path(__file__).resolve().parent.parent
-SOURCE = OUT.parents[2] / "fusion" / "PingTi_Arm_5DOF_v4.f3d"
+SOURCE = OUT.parents[2] / "fusion/archive/PingTi_Arm_5DOF_v4_original.f3d"
+
+
+def baseline_source():
+    helper = OUT.parents[2] / "Simulation/PingTi_Arm_v4_new_calib/source_artifacts.py"
+    spec = importlib.util.spec_from_file_location("pingti_git_sources", helper)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.ensure_baseline_f3d()
 
 
 def read(fn):
@@ -193,6 +202,7 @@ def run(context):
     ui = app.userInterface
     OUT.mkdir(parents=True, exist_ok=True)
     try:
+        baseline_source()
         design = adsk.fusion.Design.cast(app.activeProduct)
         if not design or "PingTi" not in app.activeDocument.name:
             raise RuntimeError("Activate the imported PingTi F3D document first.")
