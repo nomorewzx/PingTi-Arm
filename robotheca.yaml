@@ -1,0 +1,13 @@
+# Proposed by Robotheca for this repository. Every line is yours to
+# change: check it before merging.
+
+format_version: "1.0"
+name: PingTi-Arm
+summary: A human-scale robot arm derived from SO-100, with parts lists in English and Chinese, an assembly tutorial, CAD and print files, and a URDF.
+category: arm
+difficulty: intermediate
+license:
+  hardware: Apache-2.0
+  software: Apache-2.0
+source:
+  repository: https://github.com/nomorewzx/PingTi-Arm
